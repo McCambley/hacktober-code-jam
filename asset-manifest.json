@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.ad70dbfa.chunk.css",
-    "main.js": "/static/js/main.4592c53b.chunk.js",
-    "main.js.map": "/static/js/main.4592c53b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f05f2699.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f05f2699.js.map",
-    "static/js/2.29ffa564.chunk.js": "/static/js/2.29ffa564.chunk.js",
-    "static/js/2.29ffa564.chunk.js.map": "/static/js/2.29ffa564.chunk.js.map",
-    "static/js/3.02392743.chunk.js": "/static/js/3.02392743.chunk.js",
-    "static/js/3.02392743.chunk.js.map": "/static/js/3.02392743.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.ad70dbfa.chunk.css.map": "/static/css/main.ad70dbfa.chunk.css.map",
-    "static/js/2.29ffa564.chunk.js.LICENSE.txt": "/static/js/2.29ffa564.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "main.css": "/hacktober-code-jam/static/css/main.ad70dbfa.chunk.css",
+    "main.js": "/hacktober-code-jam/static/js/main.f651de65.chunk.js",
+    "main.js.map": "/hacktober-code-jam/static/js/main.f651de65.chunk.js.map",
+    "runtime-main.js": "/hacktober-code-jam/static/js/runtime-main.0ce6b0b4.js",
+    "runtime-main.js.map": "/hacktober-code-jam/static/js/runtime-main.0ce6b0b4.js.map",
+    "static/js/2.06fc9e0d.chunk.js": "/hacktober-code-jam/static/js/2.06fc9e0d.chunk.js",
+    "static/js/2.06fc9e0d.chunk.js.map": "/hacktober-code-jam/static/js/2.06fc9e0d.chunk.js.map",
+    "static/js/3.02392743.chunk.js": "/hacktober-code-jam/static/js/3.02392743.chunk.js",
+    "static/js/3.02392743.chunk.js.map": "/hacktober-code-jam/static/js/3.02392743.chunk.js.map",
+    "index.html": "/hacktober-code-jam/index.html",
+    "static/css/main.ad70dbfa.chunk.css.map": "/hacktober-code-jam/static/css/main.ad70dbfa.chunk.css.map",
+    "static/js/2.06fc9e0d.chunk.js.LICENSE.txt": "/hacktober-code-jam/static/js/2.06fc9e0d.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/hacktober-code-jam/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f05f2699.js",
-    "static/js/2.29ffa564.chunk.js",
+    "static/js/runtime-main.0ce6b0b4.js",
+    "static/js/2.06fc9e0d.chunk.js",
     "static/css/main.ad70dbfa.chunk.css",
-    "static/js/main.4592c53b.chunk.js"
+    "static/js/main.f651de65.chunk.js"
   ]
 }
