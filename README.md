@@ -1,1 +1,1 @@
-# [View a this project live 🎉](https://mccambley.github.io/hacktober-code-jam/)
+# [View this project live 🎉](https://mccambley.github.io/hacktober-code-jam/)
