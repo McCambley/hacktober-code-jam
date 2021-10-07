@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 28px 164px;
+  padding: 16px 164px;
   color: #333333;
   background-color: rgba(27, 39, 30, 0.2);
 }
@@ -28,7 +28,7 @@
 }
 
 .header__nav-item {
-  margin-right: 16px;
+  margin-right: 42px;
 }
 .header__nav-item:last-child {
   margin-right: 0px;
@@ -36,7 +36,7 @@
 
 .header__link {
   text-decoration: none;
-  color: inherit;
+  color: #fff;
   transition: opacity 0.15s ease;
   cursor: pointer;
   font-size: 24px;

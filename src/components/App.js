@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div className="page">
       <Header />
-      {/* <Switch>
+      <Switch>
         <Route path="/">
           <Hero />
           <About />
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/player">
           <Player />
         </Route>
-      </Switch> */}
+      </Switch>
     </div>
   );
 }

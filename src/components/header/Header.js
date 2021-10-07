@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import logo from "../../images/logo.svg";
-import search from "../../images/search.png";
+import search from "../../images/search.svg";
 import { Link } from "react-router-dom";
 
 export default function Header() {
