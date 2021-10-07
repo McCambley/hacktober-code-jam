@@ -22,7 +22,7 @@ export default function App() {
           <Destinations />
           <Footer />
         </Route>
-        <Route path="*">
+        <Route>
           <Redirect to="/" />
         </Route>
       </Switch>
