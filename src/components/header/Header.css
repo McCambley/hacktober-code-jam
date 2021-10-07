@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 16px 164px;
+  padding: 8px 164px;
   color: #333333;
   background-color: rgba(27, 39, 30, 0.2);
 }
@@ -26,6 +26,8 @@
   display: flex;
   list-style: none;
   padding: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
 }
 
 .header__nav-item {
@@ -67,4 +69,38 @@
 .header__button:hover {
   color: #73b0b7;
   border: 2px solid #73b0b7;
+}
+
+.header__hamburger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 8px 42px;
+  }
+
+  .header__logo {
+    margin-right: 0px;
+  }
+  .header__nav {
+    opacity: 0;
+    justify-self: flex-end;
+  }
+
+  .header__nav_open {
+    opacity: 1;
+  }
+
+  .header__nav-item_mag {
+    display: none;
+  }
+
+  .header__button {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: block;
+  }
 }

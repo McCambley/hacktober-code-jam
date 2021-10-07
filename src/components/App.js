@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link, Redirect } from "react-router-dom";
 import "./App.css";
 import Hero from "../components/hero/Hero";
 import Player from "../components/player/Player";
@@ -13,14 +13,17 @@ export default function App() {
     <div className="page">
       <Header />
       <Switch>
-        <Route path="/">
+        <Route path="/player">
+          <Player />
+        </Route>
+        <Route exact path="/">
           <Hero />
           <About />
           <Destinations />
           <Footer />
         </Route>
-        <Route path="/player">
-          <Player />
+        <Route path="*">
+          <Redirect to="/" />
         </Route>
       </Switch>
     </div>

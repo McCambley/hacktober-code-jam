@@ -6,6 +6,9 @@ font-family: 'Source Sans Pro', sans-serif; */
 /* * {
   border: 1px solid red;
 } */
+html {
+  scroll-behavior: smooth;
+}
 
 .page {
   box-sizing: border-box;
@@ -15,4 +18,5 @@ font-family: 'Source Sans Pro', sans-serif; */
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
   color: #333333;
+  position: relative;
 }

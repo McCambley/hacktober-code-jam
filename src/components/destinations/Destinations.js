@@ -1,6 +1,7 @@
 import React from "react";
 import "./Destinations.css";
 import styled from "styled-components";
+import Form from "../form/Form";
 import Place from "../place/Place";
 import mountains from "../../images/mountains.jpeg";
 import wetlands from "../../images/wetlands.jpeg";
@@ -34,7 +35,8 @@ const placeList = [
 const Section = styled.section`
   padding: 0px 164px 90px;
   display: grid;
-  gap: 30px;
+  gap: 30px 62px;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "title link"
     "directions form"
@@ -44,62 +46,59 @@ const Section = styled.section`
 
 const Title = styled.h3`
   grid-area: title;
-  background-color: red;
-  min-height: 40px;
+
   margin: 0;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 60px;
 `;
 const Link = styled.a`
   grid-area: link;
-  background-color: red;
-  min-height: 40px;
+  font-size: 24px;
+  line-height: 24px;
+  align-self: center;
+  justify-self: flex-end;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 const Directions = styled.p`
   grid-area: directions;
-  background-color: red;
-  min-height: 40px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
   margin: 0;
 `;
-const Form = styled.form`
+const FormSection = styled(Form)`
   grid-area: form;
-  background-color: red;
-  min-height: 40px;
 `;
 const Places = styled.div`
   grid-area: places;
-  background-color: red;
-  min-height: 40px;
 `;
-const Map = styled.img`
+const Map = styled.div`
   grid-area: map;
-  /* background-color: red; */
-  min-height: 40px;
   background-image: url(${mapImage});
   background-position: center;
   background-size: cover;
   border-radius: 24px;
+  /* min-height: 100%; */
+  /* width: 100%; */
 `;
 
 export default function Destinations() {
   return (
-    <Section>
+    <Section id="destinations">
       <Title>Destinations</Title>
-      <Link>All destinations →</Link>
+      <Link to="/player">All destinations →</Link>
       <Directions>
         Enter your zip-code or choose one of suggested destinations.
       </Directions>
-      <Form>
-        <input
-          id="zipcode"
-          type="text"
-          placeholder="119900"
-          // value={""}
-          minlength="5"
-          maxlength="5"
-          required
-        />
-        <label htmlFor="zipcode"> Enter your zipcode here</label>
-        <button type="submit">Submit</button>
-      </Form>
+      <FormSection displayZip={true} />
       <Places>
         {placeList.map((listedLocation, index) => {
           return (

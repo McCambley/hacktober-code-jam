@@ -44,6 +44,7 @@ const Link = styled.a`
   color: rgba(116, 116, 116, 1);
   cursor: pointer;
   transition: opacity 0.15s ease;
+  text-decoration: none;
 
   &:hover {
     opacity: 0.7;
@@ -52,7 +53,7 @@ const Link = styled.a`
 
 export default function About() {
   return (
-    <Section>
+    <Section id="about">
       <Image src={bird} alt="Bird" />
       <Container>
         <Title>Listen to the birds</Title>
@@ -61,7 +62,13 @@ export default function About() {
           the comfort of your own home. When you can't travel the globe, bring
           the great outdoors to you.
         </Subtitle>
-        <Link>Read more →</Link>
+        <Link
+          href="https://en.wikipedia.org/wiki/Bird"
+          target="_blank"
+          rel="noopener"
+        >
+          Read more →
+        </Link>
       </Container>
     </Section>
   );
