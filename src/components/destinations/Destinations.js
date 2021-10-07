@@ -1,11 +1,13 @@
 import React from "react";
 import "./Destinations.css";
 import styled from "styled-components";
+import Place from "../place/Place";
 import mountains from "../../images/mountains.jpeg";
 import wetlands from "../../images/wetlands.jpeg";
 import forests from "../../images/forests.jpeg";
+import mapImage from "../../images/map.png";
 
-const locations = [
+const placeList = [
   {
     place: "New England",
     description: "Listen to the birdsongs in mountains of New Hampshire",
@@ -44,6 +46,7 @@ const Title = styled.h3`
   grid-area: title;
   background-color: red;
   min-height: 40px;
+  margin: 0;
 `;
 const Link = styled.a`
   grid-area: link;
@@ -54,6 +57,7 @@ const Directions = styled.p`
   grid-area: directions;
   background-color: red;
   min-height: 40px;
+  margin: 0;
 `;
 const Form = styled.form`
   grid-area: form;
@@ -67,8 +71,12 @@ const Places = styled.div`
 `;
 const Map = styled.img`
   grid-area: map;
-  background-color: red;
+  /* background-color: red; */
   min-height: 40px;
+  background-image: url(${mapImage});
+  background-position: center;
+  background-size: cover;
+  border-radius: 24px;
 `;
 
 export default function Destinations() {
@@ -92,8 +100,21 @@ export default function Destinations() {
         <label htmlFor="zipcode"> Enter your zipcode here</label>
         <button type="submit">Submit</button>
       </Form>
-      <Places></Places>
-      <Map></Map>
+      <Places>
+        {placeList.map((listedLocation, index) => {
+          return (
+            <Place
+              id={index}
+              place={listedLocation.place}
+              description={listedLocation.description}
+              image={listedLocation.image}
+              zip={listedLocation.zip}
+              env={listedLocation.env}
+            />
+          );
+        })}
+      </Places>
+      <Map />
     </Section>
   );
 }
