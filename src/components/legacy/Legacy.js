@@ -1,16 +1,16 @@
 // import logo from './logo.svg';
-import "./App.css";
+import "./Player.css";
 import React from "react";
 import zipcodes from "zipcodes";
 import XenoCanto from "xeno-canto";
 import { createApi } from "unsplash-js";
-import logo from "./logo.svg";
+import logo from "../../logo.svg";
 
 // import ebird from 'ebird'
 // import { findAllByLabelText } from '@testing-library/dom';
 // const ebird = require('ebird')
 
-function App() {
+function Legacy() {
   // const [birdQuery, setBirdQuery] = React.useState("06880");
   // const [birdData, setBirdData] = React.useState("Cool");
   // const [lat, setLat] = React.useState("");
@@ -186,4 +186,4 @@ function App() {
   );
 }
 
-export default App;
+export default Legacy;
