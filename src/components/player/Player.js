@@ -1,22 +1,24 @@
 import React from "react";
 import "./Player.css";
 import styled from "styled-components";
-import Form from "../form/Form";
-import Settings from "../settings/Settings";
+// import Form from "../form/Form";
+// import Settings from "../settings/Settings";
 import BirdInfo from "../bird-info/BirdInfo";
 import Popup from "../popup/Popup";
-import defaultBackground from "../../images/background.jpeg";
+// import defaultBackground from "../../images/background.jpeg";
 import bird from "../../images/bird.svg";
 import play from "../../images/play.svg";
 import pause from "../../images/pause.svg";
 import skipForward from "../../images/skip-f.svg";
 import skipBack from "../../images/skip-b.svg";
-import settings from "../../images/settings.svg";
+// import settings from "../../images/settings.svg";
 import shuffle from "../../images/shuffle.svg";
 import mountain from "../../images/mountain.svg";
 import heart from "../../images/heart.svg";
 import liked from "../../images/liked.svg";
-import api from "../../utils/api";
+// import Audio from "../audio/Audio";
+import ReactPlayer from "react-player";
+import Form from "../form/Form";
 
 const PlayerContent = styled.section`
   background-image: url(${(props) => props.background});
@@ -36,10 +38,14 @@ const Foreground = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 28px 64px;
+  padding: 72px 76px;
   border-radius: 24px;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(8px);
+
+  @media (max-width: 1440px) {
+    padding: 72px 48px;
+  } ;
 `;
 
 const Title = styled.h1`
@@ -49,6 +55,11 @@ const Title = styled.h1`
   margin-bottom: 70px;
   font-size: 42px;
   text-transform: uppercase;
+  @media (max-width: 1440px) {
+    font-size: 24px;
+    line-height: 60px;
+    margin-bottom: 30px;
+  }
 `;
 
 const PlaybackContainer = styled.div`
@@ -56,6 +67,9 @@ const PlaybackContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  @media (max-width: 1440px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const PlaybackButton = styled.button`
@@ -82,6 +96,12 @@ const PlaybackButton = styled.button`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media (max-width: 1440px) {
+    width: 80px;
+    height: 80px;
+    padding: 24px;
+  }
 `;
 const PlaybackIcon = styled.img`
   width: 100%;
@@ -95,6 +115,9 @@ const Runner = styled.div`
   background-color: rgba(255, 255, 255, 0.69);
   border-radius: 2px;
   display: flex;
+  @media (max-width: 1440px) {
+    margin-bottom: 50px;
+  }
 `;
 const Progress = styled.div`
   height: 100%;
@@ -137,32 +160,31 @@ const ButtonIcon = styled.img`
   height: 100%;
 `;
 
-export default function Player({ background, destination }) {
+export default function Player({
+  background,
+  locationName,
+  zipcode,
+  environment,
+  setZipcode,
+  setEnvironment,
+  handleSubmit,
+  isSubmitting,
+  birdNames,
+  sources,
+  handleRandomize,
+  updateBackground,
+}) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isLiked, setIsLiked] = React.useState(false);
   const [birdTooltipOpen, setBirdTooltipOpen] = React.useState(false);
   const [settingsTooltipOpen, setSettingsTooltipOpen] = React.useState(false);
+  const [count, setCount] = React.useState(30);
+  const firstSound = React.useRef();
 
-  React.useEffect(() => {
-    // api
-    //   .getBirds(41.127, -73.3591)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.error(err));
-    // api
-    //   .getSong("Cardinalis cardinalis")
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.error(err));
-    // api
-    //   .getImage("sunset")
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.error(err));
-  }, []);
+  React.useState(() => {
+    const newCount = Math.floor(Math.random() * 100);
+    setCount(newCount);
+  }, [isLiked, isPlaying]);
 
   function toggleBirdInfo() {
     setBirdTooltipOpen(!birdTooltipOpen);
@@ -184,20 +206,20 @@ export default function Player({ background, destination }) {
     <>
       <PlayerContent background={background}>
         <Foreground>
-          <Title>{destination}</Title>
+          <Title>{locationName}</Title>
           <PlaybackContainer>
-            <PlaybackButton className="skip">
+            <PlaybackButton className="skip" onClick={updateBackground}>
               <PlaybackIcon src={skipBack} />
             </PlaybackButton>
             <PlaybackButton onClick={togglePlayback}>
               <PlaybackIcon src={isPlaying ? pause : play} />
             </PlaybackButton>
-            <PlaybackButton className="skip">
+            <PlaybackButton className="skip" onClick={updateBackground}>
               <PlaybackIcon src={skipForward} />
             </PlaybackButton>
           </PlaybackContainer>
           <Runner>
-            <Progress progress={33} />
+            <Progress progress={count} />
           </Runner>
           <IconsContainer>
             <PlayerButton onClick={toggleLike}>
@@ -209,18 +231,65 @@ export default function Player({ background, destination }) {
             <PlayerButton onClick={toggleBirdInfo}>
               <ButtonIcon src={bird} alt="Playback icon" />
             </PlayerButton>
-            <PlayerButton onClick={() => console.log("Shuffling")}>
+            <PlayerButton onClick={handleRandomize}>
               <ButtonIcon src={shuffle} alt="Playback icon" />
             </PlayerButton>
           </IconsContainer>
         </Foreground>
       </PlayerContent>
       <Popup isOpen={birdTooltipOpen} toggleClose={toggleBirdInfo}>
-        <BirdInfo />
+        <BirdInfo birdNames={birdNames} sources={sources} />
       </Popup>
       <Popup isOpen={settingsTooltipOpen} toggleClose={toggleSettings}>
-        <Settings />
+        <Form
+          double={true}
+          displayZip={true}
+          displayEnv={true}
+          zipcode={zipcode}
+          environment={environment}
+          setZipcode={setZipcode}
+          setEnvironment={setEnvironment}
+          handleSubmit={handleSubmit}
+          isSubmitting={isSubmitting}
+        />
       </Popup>
+      <ReactPlayer
+        ref={firstSound}
+        playing={isPlaying}
+        url={sources[0] && sources[0].file}
+        loop={true}
+        height="0"
+        width="0"
+        playbackRate={1}
+        volume={0.3}
+      />
+      <ReactPlayer
+        playing={isPlaying}
+        url={sources[1] && sources[1].file}
+        loop={true}
+        height="0"
+        width="0"
+        playbackRate={0.9}
+        volume={0.2}
+      />
+      <ReactPlayer
+        playing={isPlaying}
+        url={sources[2] && sources[2].file}
+        loop={true}
+        height="0"
+        width="0"
+        playbackRate={0.8}
+        volume={0.5}
+      />
+      <ReactPlayer
+        playing={isPlaying}
+        url={sources[3] && sources[3].file}
+        loop={true}
+        height="0"
+        width="0"
+        playbackRate={0.95}
+        volume={0.8}
+      />
     </>
   );
 }

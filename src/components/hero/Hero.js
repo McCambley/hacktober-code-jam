@@ -14,6 +14,9 @@ const Section = styled.section`
   align-items: flex-end;
   padding: 120px 164px;
   box-sizing: border-box;
+  @media (max-width: 1440px) {
+    padding: 32px 40px;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -22,9 +25,13 @@ const TextContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 32px;
-  background: rgba(255, 255, 255, 0.69);
+  background: rgba(255, 255, 255, 0.32);
   box-sizing: border-box;
   border-radius: 24px;
+  backdrop-filter: blur(10px);
+  @media (max-width: 1440px) {
+    padding: 36px 44px;
+  }
 `;
 
 const Title = styled.h1`
@@ -36,6 +43,10 @@ const Title = styled.h1`
   text-align: center;
   margin-bottom: 20px;
   font-weight: 700;
+  @media (max-width: 1440px) {
+    font-size: 36px;
+    line-height: 60px;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -44,6 +55,10 @@ const Subtitle = styled.h2`
   line-height: 24px;
   text-align: center;
   font-weight: 400;
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 export default function Hero() {

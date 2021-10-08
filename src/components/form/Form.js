@@ -53,12 +53,22 @@ const Button = styled.button`
     color: #2b8dc0;
     border: 2px solid #2b8dc0;
   }
-`;
-export default function Form({ double = false, displayZip, displayEnv }) {
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    console.log("submitted");
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
   }
+`;
+export default function Form({
+  double = false,
+  displayZip,
+  displayEnv,
+  zipcode,
+  environment,
+  setZipcode,
+  setEnvironment,
+  handleSubmit,
+  isSubmitting,
+}) {
   return (
     <FormSection onSubmit={handleSubmit} double={double}>
       {displayZip && (
@@ -67,7 +77,8 @@ export default function Form({ double = false, displayZip, displayEnv }) {
             id="zipcode"
             type="text"
             placeholder="119900"
-            // value={""}
+            value={zipcode}
+            onChange={(e) => setZipcode(e.target.value)}
             minlength="5"
             maxlength="5"
             required
@@ -81,7 +92,8 @@ export default function Form({ double = false, displayZip, displayEnv }) {
             id="environment"
             type="text"
             placeholder="Mountains"
-            // value={""}
+            value={environment}
+            onChange={(e) => setEnvironment(e.target.value)}
             minlength="2"
             maxlength="80"
             required
@@ -89,7 +101,9 @@ export default function Form({ double = false, displayZip, displayEnv }) {
           <Label htmlFor="environment">Enter an Environment here</Label>
         </InputContainer>
       )}
-      <Button type="submit">Submit</Button>
+      <Button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "Loading..." : "Submit"}
+      </Button>
     </FormSection>
   );
 }

@@ -9,6 +9,9 @@ const Section = styled.section`
   gap: 30px;
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
+  @media (max-width: 1440px) {
+    padding: 70px 40px;
+  }
 `;
 
 const Image = styled.img`
@@ -30,6 +33,10 @@ const Title = styled.h3`
   font-size: 36px;
   line-height: 36px;
   margin-bottom: 50px;
+  @media (max-width: 1440px) {
+    font-size: 24px;
+    line-height: 60px;
+  }
 `;
 const Subtitle = styled.p`
   margin: 0;
@@ -37,6 +44,10 @@ const Subtitle = styled.p`
   font-size: 24px;
   line-height: 42px;
   font-weight: 400;
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 const Link = styled.a`
   font-size: 24px;
@@ -48,6 +59,10 @@ const Link = styled.a`
 
   &:hover {
     opacity: 0.7;
+  }
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
   }
 `;
 

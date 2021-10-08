@@ -10,6 +10,7 @@
   padding: 8px 164px;
   color: #333333;
   background-color: rgba(27, 39, 30, 0.2);
+  z-index: 5;
 }
 
 .header__logo {
@@ -75,13 +76,14 @@
   display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .header {
     padding: 8px 42px;
   }
 
   .header__logo {
     margin-right: 0px;
+    width: 60px;
   }
   .header__nav {
     opacity: 0;

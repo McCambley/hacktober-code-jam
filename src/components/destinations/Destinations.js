@@ -17,14 +17,14 @@ const placeList = [
     env: "mountains",
   },
   {
-    place: "New Orleans",
+    place: "The Everglades",
     description: "Listen to the birdsongs in the Everglads of Florida",
     image: wetlands,
     zip: "33030",
     env: "everglades",
   },
   {
-    place: "New Orleans",
+    place: "Redwood Forest",
     description: "Listen to the birdsongs in the forests of California",
     image: forests,
     zip: "95531",
@@ -42,6 +42,10 @@ const Section = styled.section`
     "directions form"
     "places map";
   box-sizing: border-box;
+
+  @media (max-width: 1440px) {
+    padding: 0 40px 115px;
+  }
 `;
 
 const Title = styled.h3`
@@ -73,6 +77,10 @@ const Directions = styled.p`
   font-size: 24px;
   line-height: 24px;
   margin: 0;
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 const FormSection = styled(Form)`
   grid-area: form;
@@ -90,7 +98,22 @@ const Map = styled.div`
   /* width: 100%; */
 `;
 
-export default function Destinations() {
+export default function Destinations({
+  zipcode,
+  environment,
+  setZipcode,
+  setEnvironment,
+  handleSubmit,
+  isSubmitting,
+  updatePlayer,
+}) {
+  function handlePlaceClick(zip, env) {
+    setZipcode(zip);
+    setEnvironment(env, () => {
+      updatePlayer();
+    });
+  }
+
   return (
     <Section id="destinations">
       <Title>Destinations</Title>
@@ -98,7 +121,15 @@ export default function Destinations() {
       <Directions>
         Enter your zip-code or choose one of suggested destinations.
       </Directions>
-      <FormSection displayZip={true} />
+      <FormSection
+        displayZip={true}
+        zipcode={zipcode}
+        environment={environment}
+        setZipcode={setZipcode}
+        setEnvironment={setEnvironment}
+        handleSubmit={handleSubmit}
+        isSubmitting={isSubmitting}
+      />
       <Places>
         {placeList.map((listedLocation, index) => {
           return (
@@ -109,6 +140,7 @@ export default function Destinations() {
               image={listedLocation.image}
               zip={listedLocation.zip}
               env={listedLocation.env}
+              handlePlaceClick={handlePlaceClick}
             />
           );
         })}

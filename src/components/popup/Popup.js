@@ -32,6 +32,7 @@ const Container = styled.div`
   /* gap: 28px; */
   padding: 36px;
   position: relative;
+  max-width: 75%;
 `;
 
 const CloseIcon = styled.img`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: grid;
@@ -11,9 +11,13 @@ const Container = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  @media (max-width: 1440px) {
+    grid-template-columns: 210px 1fr;
+  }
 `;
 
-const ImageLink = styled(Link)`
+const ImageDiv = styled.div`
   cursor: pointer;
   transition: opacity 0.15s ease;
   border-radius: 24px;
@@ -38,7 +42,7 @@ const TextWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
 `;
-const Title = styled(Link)`
+const Title = styled.h3`
   margin: 0;
   font-family: "Playfair Display", serif;
   font-weight: 700;
@@ -48,9 +52,15 @@ const Title = styled(Link)`
   text-decoration: none;
   color: inherit;
   transition: opacity 0.15s ease;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
   }
 `;
 const Subtitle = styled.p`
@@ -58,14 +68,29 @@ const Subtitle = styled.p`
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
+  @media (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
-export default function place({ place, description, image, zip, env }) {
+export default function place({
+  place,
+  description,
+  image,
+  zip,
+  env,
+  handlePlaceClick,
+}) {
   return (
     <Container>
-      <ImageLink image={image} to="/player" />
+      <ImageDiv
+        onClick={() => handlePlaceClick(zip, env)}
+        image={image}
+        alt={env}
+      />
       <TextWrapper>
-        <Title to="/player">{place}</Title>
+        <Title onClick={() => handlePlaceClick(zip, env)}>{place}</Title>
         <Subtitle>{description}</Subtitle>
       </TextWrapper>
     </Container>

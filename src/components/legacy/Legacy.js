@@ -44,9 +44,11 @@ function Legacy() {
   });
 
   function loadBird(birdName) {
-    console.log(birdName);
+    // console.log(birdName);
     const birdQuery = birdName.split(" ").join("+");
-    return fetch(`https://jsonp.afeld.me/?url=https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`)
+    return fetch(
+      `https://jsonp.afeld.me/?url=https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`
+    )
       .then((res) => {
         if (!res.ok) {
           return Promise.reject(`${res.status} error!`);
@@ -67,7 +69,7 @@ function Legacy() {
     api.search
       .getPhotos({ query, orientation: "landscape" })
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setBackgroundImage(result.response.results[imageIndex].urls.regular);
       })
       .catch((error) => {
@@ -83,7 +85,7 @@ function Legacy() {
     // setLong(longitude);
     findBirds(latitude, longitude).then((promises) => {
       Promise.all(promises).then((values) => {
-        console.log(values);
+        // console.log(values);
         setSources(values);
         loadImage(environmentValue);
       });
@@ -98,11 +100,14 @@ function Legacy() {
   }
 
   function findBirds(lat, long) {
-    return fetch(`https://api.ebird.org/v2/data/obs/geo/recent?lat=${lat}&lng=${long}`, {
-      headers: {
-        "x-ebirdapitoken": "mi4ei0kog2o9",
-      },
-    })
+    return fetch(
+      `https://api.ebird.org/v2/data/obs/geo/recent?lat=${lat}&lng=${long}`,
+      {
+        headers: {
+          "x-ebirdapitoken": "mi4ei0kog2o9",
+        },
+      }
+    )
       .then((res) => {
         if (!res.ok) {
           return Promise.reject(`${res.status} error!`);
@@ -110,7 +115,7 @@ function Legacy() {
         return res.json();
       })
       .then((data) => {
-        console.log({ one: data[0].sciName, two: data[1].sciName, three: data[2].sciName, four: data[3].sciName });
+        // console.log({ one: data[0].sciName, two: data[1].sciName, three: data[2].sciName, four: data[3].sciName });
         // setBirdOne(data[0].sciName);
         // setBirdTwo(data[1].sciName);
         // setBirdThree(data[2].sciName);
@@ -167,8 +172,18 @@ function Legacy() {
         return <audio key={index} src={sound} autoPlay loop></audio>;
       })}
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Enter Zipcode" onChange={handleChange} value={inputValue} />
-        <input type="text" placeholder="Choose Environment" onChange={handleEnvironmentChange} value={environmentValue} />
+        <input
+          type="text"
+          placeholder="Enter Zipcode"
+          onChange={handleChange}
+          value={inputValue}
+        />
+        <input
+          type="text"
+          placeholder="Choose Environment"
+          onChange={handleEnvironmentChange}
+          value={environmentValue}
+        />
         <button type="submit">Submit</button>
       </form>
       {/* <button onClick={loadBird}>BIRD TIME</button>
