@@ -32,9 +32,17 @@ const Copyright = styled.div`
 const Logo = styled.img`
   margin-bottom: 50px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 `;
 const LinksContainer = styled.div`
   margin-bottom: 50px;
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 `;
 
 const FooterLink = styled(Link)`
@@ -52,6 +60,12 @@ const FooterLink = styled(Link)`
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
   }
 `;
 
