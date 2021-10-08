@@ -36,8 +36,16 @@ const Container = styled.div`
 
 const CloseIcon = styled.img`
   position: absolute;
-  top: -24px;
-  right: -24px;
+  width: 40px;
+  height: 40px;
+  top: -32px;
+  right: -32px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export default function Popup({ isOpen, children, toggleClose }) {

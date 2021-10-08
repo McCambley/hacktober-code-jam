@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 255px 1fr;
   gap: 16px;
   margin-bottom: 20px;
 

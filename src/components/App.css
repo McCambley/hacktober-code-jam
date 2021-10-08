@@ -19,4 +19,5 @@ html {
   font-family: "Source Sans Pro", sans-serif;
   color: #333333;
   position: relative;
+  min-width: 840px;
 }

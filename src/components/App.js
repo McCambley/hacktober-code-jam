@@ -7,14 +7,17 @@ import About from "../components/about/About";
 import Destinations from "../components/destinations/Destinations";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import newOrleans from "../images/background.jpeg";
 
 export default function App() {
+  const [backgroundImage, setBackgroundImage] = React.useState(newOrleans);
+  const [locationName, setLocationName] = React.useState("New Orleans");
   return (
     <div className="page">
       <Header />
       <Switch>
         <Route path="/player">
-          <Player />
+          <Player background={backgroundImage} destination={locationName} />
         </Route>
         <Route exact path="/">
           <Hero />
