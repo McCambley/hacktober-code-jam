@@ -79,7 +79,7 @@ export default function Form({
         <InputContainer>
           <Input
             id="zipcode"
-            type="text"
+            type="number"
             placeholder="119900"
             value={zipcode}
             onChange={(e) => setZipcode(e.target.value)}
