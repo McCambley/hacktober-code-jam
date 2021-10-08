@@ -7,6 +7,7 @@ import mountains from "../../images/mountains.jpeg";
 import wetlands from "../../images/wetlands.jpeg";
 import forests from "../../images/forests.jpeg";
 import mapImage from "../../images/map.png";
+import { useHistory } from "react-router";
 
 const placeList = [
   {
@@ -135,11 +136,12 @@ export default function Destinations({
   isSubmitting,
   updatePlayer,
 }) {
+  const history = useHistory();
   function handlePlaceClick(zip, env) {
     setZipcode(zip);
-    setEnvironment(env, () => {
-      updatePlayer();
-    });
+    setEnvironment(env);
+    history.push("/player");
+    updatePlayer(zip, env);
   }
 
   return (

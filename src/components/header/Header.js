@@ -7,7 +7,7 @@ import close from "../../images/close.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export default function Header() {
+export default function Header({ zipcode, environment, updatePlayer }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   function toggleMenu() {
     setMenuOpen(!menuOpen);
@@ -24,7 +24,14 @@ export default function Header() {
           </HashLink>
         </li>
         <li className="header__nav-item">
-          <Link to="/player" className="header__link" href="#destinations">
+          <Link
+            to="/player"
+            onClick={() => {
+              updatePlayer(zipcode, environment);
+            }}
+            className="header__link"
+            href="#destinations"
+          >
             Player
           </Link>
         </li>

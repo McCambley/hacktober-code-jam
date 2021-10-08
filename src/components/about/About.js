@@ -74,7 +74,7 @@ const NewLink = styled(Link)`
   }
 `;
 
-export default function About() {
+export default function About({ zipcode, environment, updatePlayer }) {
   return (
     <Section id="about">
       <Image src={bird} alt="Bird" />
@@ -85,7 +85,14 @@ export default function About() {
           the comfort of your own home. When you can't travel the globe, bring
           the great outdoors to you.
         </Subtitle>
-        <NewLink to="/player">Try now →</NewLink>
+        <NewLink
+          to="/player"
+          onClick={() => {
+            updatePlayer(zipcode, environment);
+          }}
+        >
+          Try now →
+        </NewLink>
       </Container>
     </Section>
   );

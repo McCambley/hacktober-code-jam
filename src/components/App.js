@@ -49,15 +49,16 @@ export default function App() {
     //   .catch((err) => console.error(err));
   }, []);
 
-  function handleSubmit(evt) {
+  function handleSubmit(evt, z, e) {
     evt.preventDefault();
-    updatePlayer();
+    updatePlayer(z, e);
   }
 
-  function updatePlayer() {
+  function updatePlayer(z, e) {
     setIsSubmitting(true);
     setSources([]);
-    const newLocation = zipcodes.lookup(zipcode);
+    console.log({ z, e });
+    const newLocation = zipcodes.lookup(z);
     if (!newLocation) {
       console.log("That's not a place!");
       return;
@@ -101,7 +102,7 @@ export default function App() {
         Promise.all(promises).then((values) => {
           // console.log(values);
           setSources(values);
-          updateBackground();
+          updateBackground(e);
           setIsSubmitting(false);
           history.push("/player");
         });
@@ -112,9 +113,9 @@ export default function App() {
       });
   }
 
-  function updateBackground() {
+  function updateBackground(e) {
     api
-      .getImage(environment)
+      .getImage(e)
       .then((res) => {
         // console.log(res.urls.regular);
         return setBackgroundImage(res.urls.regular);
@@ -129,12 +130,16 @@ export default function App() {
     const { zipcode, query } = shuffles[index];
     setZipcode(zipcode);
     setEnvironment(query);
-    updatePlayer();
+    updatePlayer(zipcode, query);
   }
 
   return (
     <div className="page">
-      <Header />
+      <Header
+        zipcode={zipcode}
+        environment={environment}
+        updatePlayer={updatePlayer}
+      />
       <Switch>
         <Route path="/player">
           <Player
@@ -150,11 +155,16 @@ export default function App() {
             sources={sources}
             handleRandomize={handleRandomize}
             updateBackground={updateBackground}
+            updatePlayer={updatePlayer}
           />
         </Route>
         <Route exact path="/">
           <Hero />
-          <About />
+          <About
+            zipcode={zipcode}
+            environment={environment}
+            updatePlayer={updatePlayer}
+          />
           <Destinations
             zipcode={zipcode}
             environment={environment}

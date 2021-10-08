@@ -206,6 +206,7 @@ export default function Player({
   sources,
   handleRandomize,
   updateBackground,
+  updatePlayer,
 }) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isLiked, setIsLiked] = React.useState(false);
@@ -239,15 +240,23 @@ export default function Player({
     <>
       <PlayerContent background={background}>
         <Foreground>
-          <Title>{locationName}</Title>
+          <Title>
+            {isSubmitting ? `Loading ${environment}...` : locationName}
+          </Title>
           <PlaybackContainer>
-            <PlaybackButton className="skip" onClick={updateBackground}>
+            <PlaybackButton
+              className="skip"
+              onClick={() => updateBackground(environment)}
+            >
               <PlaybackIcon src={skipBack} />
             </PlaybackButton>
             <PlaybackButton onClick={togglePlayback}>
               <PlaybackIcon src={isPlaying ? pause : play} />
             </PlaybackButton>
-            <PlaybackButton className="skip" onClick={updateBackground}>
+            <PlaybackButton
+              className="skip"
+              onClick={() => updateBackground(environment)}
+            >
               <PlaybackIcon src={skipForward} />
             </PlaybackButton>
           </PlaybackContainer>

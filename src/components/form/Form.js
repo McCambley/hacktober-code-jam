@@ -74,7 +74,10 @@ export default function Form({
   isSubmitting,
 }) {
   return (
-    <FormSection onSubmit={handleSubmit} double={double}>
+    <FormSection
+      onSubmit={(evt) => handleSubmit(evt, zipcode, environment)}
+      double={double}
+    >
       {displayZip && (
         <InputContainer>
           <Input
