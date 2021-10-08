@@ -87,7 +87,7 @@ export default function Form({
             maxlength="5"
             required
           />
-          <Label htmlFor="zipcode"> Enter your zipcode here</Label>
+          <Label htmlFor="zipcode"> Enter zipcode</Label>
         </InputContainer>
       )}
       {displayEnv && (
@@ -102,7 +102,7 @@ export default function Form({
             maxlength="80"
             required
           />
-          <Label htmlFor="environment">Enter an Environment here</Label>
+          <Label htmlFor="environment">Enter landscape</Label>
         </InputContainer>
       )}
       <Button type="submit" disabled={isSubmitting}>
