@@ -19,6 +19,7 @@ import liked from "../../images/liked.svg";
 // import Audio from "../audio/Audio";
 import ReactPlayer from "react-player";
 import Form from "../form/Form";
+import loading from "../../images/loading.svg";
 
 const PlayerContent = styled.section`
   background-image: url(${(props) => props.background});
@@ -215,6 +216,10 @@ export default function Player({
   const [count, setCount] = React.useState(30);
   const firstSound = React.useRef();
 
+  React.useEffect(() => {
+    setIsPlaying(true);
+  }, [sources]);
+
   React.useState(() => {
     const newCount = Math.floor(Math.random() * 100);
     setCount(newCount);
@@ -251,7 +256,9 @@ export default function Player({
               <PlaybackIcon src={skipBack} />
             </PlaybackButton>
             <PlaybackButton onClick={togglePlayback}>
-              <PlaybackIcon src={isPlaying ? pause : play} />
+              <PlaybackIcon
+                src={isSubmitting ? loading : isPlaying ? pause : play}
+              />
             </PlaybackButton>
             <PlaybackButton
               className="skip"
