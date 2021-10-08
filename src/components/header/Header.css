@@ -106,3 +106,24 @@
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    height: 76px;
+  }
+  .header__logo {
+    width: 36px;
+  }
+  .header__nav {
+    flex-direction: column;
+  }
+  .header__nav-item {
+    margin-right: 0;
+  }
+  .header__link {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+  }
+}

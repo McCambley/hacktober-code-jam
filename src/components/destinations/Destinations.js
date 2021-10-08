@@ -46,6 +46,18 @@ const Section = styled.section`
   @media (max-width: 1440px) {
     padding: 0 40px 115px;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 32px 76px;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    grid-template-areas:
+      "title link "
+      "directions directions"
+      "form form"
+      "places places"
+      "map map";
+  }
 `;
 
 const Title = styled.h3`
@@ -57,6 +69,10 @@ const Title = styled.h3`
   font-weight: 700;
   font-size: 36px;
   line-height: 60px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 `;
 const Link = styled.a`
   grid-area: link;
@@ -70,6 +86,11 @@ const Link = styled.a`
   &:hover {
     opacity: 0.7;
   }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 36px;
+  }
 `;
 const Directions = styled.p`
   grid-area: directions;
@@ -79,6 +100,10 @@ const Directions = styled.p`
   margin: 0;
   @media (max-width: 1440px) {
     font-size: 18px;
+    line-height: 24px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
     line-height: 24px;
   }
 `;
@@ -96,6 +121,9 @@ const Map = styled.div`
   border-radius: 24px;
   /* min-height: 100%; */
   /* width: 100%; */
+  @media (max-width: 768px) {
+    min-height: 500px;
+  }
 `;
 
 export default function Destinations({

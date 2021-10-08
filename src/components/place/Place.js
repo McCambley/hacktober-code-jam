@@ -15,6 +15,9 @@ const Container = styled.div`
   @media (max-width: 1440px) {
     grid-template-columns: 210px 1fr;
   }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ImageDiv = styled.div`

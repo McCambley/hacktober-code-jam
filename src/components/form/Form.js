@@ -9,6 +9,7 @@ const FormSection = styled.form`
   grid-template-columns: ${({ double }) =>
     double ? `1fr 1fr 1fr` : `2fr 1fr`};
   justify-content: space-between;
+  grid-area: form;
 `;
 const InputContainer = styled.div`
   display: flex;

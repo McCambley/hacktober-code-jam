@@ -12,6 +12,10 @@ const Section = styled.section`
   @media (max-width: 1440px) {
     padding: 70px 40px;
   }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 24px 32px;
+  }
 `;
 
 const Image = styled.img`
@@ -23,6 +27,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  @media (max-width: 768px) {
+    grid-row: 1; /* NEW */
+  }
 `;
 
 const Title = styled.h3`

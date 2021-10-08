@@ -17,6 +17,10 @@ const Section = styled.section`
   @media (max-width: 1440px) {
     padding: 32px 40px;
   }
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -29,6 +33,7 @@ const TextContainer = styled.div`
   box-sizing: border-box;
   border-radius: 24px;
   backdrop-filter: blur(10px);
+  max-width: 100%;
   @media (max-width: 1440px) {
     padding: 36px 44px;
   }
