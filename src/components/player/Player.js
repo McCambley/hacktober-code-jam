@@ -72,8 +72,12 @@ const Title = styled.h1`
     line-height: 60px;
     margin-bottom: 30px;
   }
+  @media (max-width: 768px) {
+    text-align: center;
+    line-height: 30px;
+  }
   @media (max-width: 768px) and (orientation: landscape) {
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
 `;
 

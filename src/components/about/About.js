@@ -72,6 +72,10 @@ const NewLink = styled(Link)`
     font-size: 18px;
     line-height: 24px;
   }
+  @media (max-width: 480px) {
+    font-size: 16px;
+    line-height: 44px;
+  }
 `;
 
 export default function About({ zipcode, environment, updatePlayer }) {

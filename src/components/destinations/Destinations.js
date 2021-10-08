@@ -51,7 +51,7 @@ const Section = styled.section`
   @media (max-width: 768px) {
     padding: 0 32px 76px;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    gap: 28px 8px;
     grid-template-areas:
       "title link "
       "directions directions"
@@ -83,6 +83,7 @@ const Link = styled.a`
   justify-self: flex-end;
   cursor: pointer;
   transition: opacity 0.15s ease;
+  color: rgba(116, 116, 116, 1);
 
   &:hover {
     opacity: 0.7;
@@ -91,6 +92,10 @@ const Link = styled.a`
   @media (max-width: 768px) {
     font-size: 18px;
     line-height: 36px;
+  }
+  @media (max-width: 480px) {
+    font-size: 16px;
+    line-height: 44px;
   }
 `;
 const Directions = styled.p`
