@@ -31,6 +31,9 @@ const PlayerContent = styled.section`
   align-items: center;
   padding: 60px;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    padding: 24px;
+  } ;
 `;
 
 const Foreground = styled.div`
@@ -45,7 +48,15 @@ const Foreground = styled.div`
 
   @media (max-width: 1440px) {
     padding: 72px 48px;
-  } ;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 52px 24px;
+  }
+  @media (max-width: 768px) and (orientation: landscape) {
+    padding: 24px 18px;
+  }
 `;
 
 const Title = styled.h1`
@@ -60,6 +71,9 @@ const Title = styled.h1`
     line-height: 60px;
     margin-bottom: 30px;
   }
+  @media (max-width: 768px) and (orientation: landscape) {
+    margin-bottom: 0;
+  }
 `;
 
 const PlaybackContainer = styled.div`
@@ -69,6 +83,9 @@ const PlaybackContainer = styled.div`
   margin-bottom: 50px;
   @media (max-width: 1440px) {
     margin-bottom: 30px;
+  }
+  @media (max-width: 768px) and (orientation: landscape) {
+    margin-bottom: 16px;
   }
 `;
 
@@ -118,6 +135,9 @@ const Runner = styled.div`
   @media (max-width: 1440px) {
     margin-bottom: 50px;
   }
+  @media (max-width: 768px) and (orientation: landscape) {
+    margin-bottom: 20px;
+  }
 `;
 const Progress = styled.div`
   height: 100%;
@@ -130,6 +150,16 @@ const Progress = styled.div`
 const IconsContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 48px;
+  }
+  @media (max-width: 768px) and (orientation: landscape) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 32px;
+  }
 `;
 
 const PlayerButton = styled.button`
@@ -153,6 +183,9 @@ const PlayerButton = styled.button`
 
   &:last-of-type {
     margin-right: 0;
+  }
+  @media (max-width: 768px) {
+    margin: 0 auto;
   }
 `;
 const ButtonIcon = styled.img`

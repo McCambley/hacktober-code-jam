@@ -47,6 +47,11 @@ const CloseIcon = styled.img`
   &:hover {
     opacity: 0.7;
   }
+
+  @media (max-width: 768px) {
+    top: -42px;
+    right: 0px;
+  }
 `;
 
 export default function Popup({ isOpen, children, toggleClose }) {

@@ -10,6 +10,9 @@ const FormSection = styled.form`
     double ? `1fr 1fr 1fr` : `2fr 1fr`};
   justify-content: space-between;
   grid-area: form;
+  @media (max-width: 768px) and (orientation: portrait) {
+    grid-template-columns: 1fr;
+  }
 `;
 const InputContainer = styled.div`
   display: flex;
