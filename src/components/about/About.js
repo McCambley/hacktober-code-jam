@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import "./Destinations.css";
 import styled from "styled-components";
 import bird from "../../images/about.jpeg";
@@ -56,7 +57,7 @@ const Subtitle = styled.p`
     line-height: 24px;
   }
 `;
-const Link = styled.a`
+const NewLink = styled(Link)`
   font-size: 24px;
   line-height: 24px;
   color: rgba(116, 116, 116, 1);
@@ -84,13 +85,7 @@ export default function About() {
           the comfort of your own home. When you can't travel the globe, bring
           the great outdoors to you.
         </Subtitle>
-        <Link
-          href="https://en.wikipedia.org/wiki/Bird"
-          target="_blank"
-          rel="noopener"
-        >
-          Read more →
-        </Link>
+        <NewLink to="/player">Try now →</NewLink>
       </Container>
     </Section>
   );

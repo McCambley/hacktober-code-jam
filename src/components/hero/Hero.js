@@ -2,6 +2,7 @@ import React from "react";
 import "./Hero.css";
 import styled from "styled-components";
 import hero from "../../images/hero.png";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
   background-image: url(${(props) => props.background || hero});
@@ -54,12 +55,14 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.h2`
+const Subtitle = styled(Link)`
   margin: 0;
   font-size: 24px;
   line-height: 24px;
   text-align: center;
   font-weight: 400;
+  text-decoration: none;
+  color: inherit;
   @media (max-width: 1440px) {
     font-size: 18px;
     line-height: 24px;
@@ -71,7 +74,7 @@ export default function Hero() {
     <Section className="hero" background={hero}>
       <TextContainer>
         <Title>Birdsongs</Title>
-        <Subtitle>Bring the great outdoors to you.</Subtitle>
+        <Subtitle to="/player">Bring the great outdoors to you</Subtitle>
       </TextContainer>
     </Section>
   );

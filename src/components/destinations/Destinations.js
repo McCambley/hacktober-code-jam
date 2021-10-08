@@ -18,7 +18,7 @@ const placeList = [
   },
   {
     place: "The Everglades",
-    description: "Listen to the birdsongs in the Everglads of Florida",
+    description: "Listen to the birdsongs in the Everglades of Florida",
     image: wetlands,
     zip: "33030",
     env: "everglades",
@@ -162,6 +162,7 @@ export default function Destinations({
         {placeList.map((listedLocation, index) => {
           return (
             <Place
+              key={index}
               id={index}
               place={listedLocation.place}
               description={listedLocation.description}

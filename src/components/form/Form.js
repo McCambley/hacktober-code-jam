@@ -100,6 +100,7 @@ export default function Form({
             onChange={(e) => setEnvironment(e.target.value)}
             minlength="2"
             maxlength="80"
+            pattern="[a-zA-Z]+"
             required
           />
           <Label htmlFor="environment">Enter landscape</Label>

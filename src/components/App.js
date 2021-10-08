@@ -17,11 +17,11 @@ export default function App() {
   const history = useHistory();
   // form inputs
   const [zipcode, setZipcode] = React.useState("03846");
-  const [environment, setEnvironment] = useStateWithCallbackLazy("Dogs");
+  const [environment, setEnvironment] = useStateWithCallbackLazy("seacoast");
 
   // fetch results
   const [backgroundImage, setBackgroundImage] = React.useState(newOrleans);
-  const [locationName, setLocationName] = React.useState("New Orleans");
+  const [locationName, setLocationName] = React.useState("Jackson, NH");
   const [sources, setSources] = React.useState([]);
   const [birdNames, setBirdNames] = React.useState([]);
 

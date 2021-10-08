@@ -5,6 +5,7 @@ import search from "../../images/search.svg";
 import hamburger from "../../images/hamburger.svg";
 import close from "../../images/close.svg";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -18,14 +19,14 @@ export default function Header() {
       </Link>
       <ul className={`header__nav ${menuOpen ? "header__nav_open" : ""}`}>
         <li className="header__nav-item">
-          <a className="header__link" href="#about">
+          <HashLink to="/#about" className="header__link" href="#about">
             About us
-          </a>
+          </HashLink>
         </li>
         <li className="header__nav-item">
-          <a className="header__link" href="#destinations">
-            Destinations
-          </a>
+          <Link to="/player" className="header__link" href="#destinations">
+            Player
+          </Link>
         </li>
         <li className="header__nav-item header__nav-item_mag">
           <img className="header__link" src={search} alt="Magnifying glass" />

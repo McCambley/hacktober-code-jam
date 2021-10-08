@@ -45,9 +45,10 @@ class Api {
   }
 
   getImage(environment) {
+    let adjustedEnvironment = environment.split(" ");
     return this._unsplashApi.photos
       .getRandom({
-        query: environment,
+        query: adjustedEnvironment.join("+"),
         orientation: "landscape",
       })
       .then((res) => {
