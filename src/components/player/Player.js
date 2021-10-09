@@ -1,6 +1,6 @@
 import React from "react";
 import "./Player.css";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 // import Form from "../form/Form";
 // import Settings from "../settings/Settings";
 import BirdInfo from "../bird-info/BirdInfo";
@@ -20,6 +20,17 @@ import liked from "../../images/liked.svg";
 import ReactPlayer from "react-player";
 import Form from "../form/Form";
 import loading from "../../images/loading.svg";
+import spinner from "../../images/spinner.svg";
+import spinnerDark from "../../images/spinner-dark.svg";
+
+const spinLoader = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 const PlayerContent = styled.section`
   background-image: url(${(props) => props.background});
@@ -66,7 +77,10 @@ const Title = styled.h1`
   font-weight: 700;
   margin-bottom: 70px;
   font-size: 42px;
-  text-transform: uppercase;
+  text-transform: ${(props) => (props.isLoading ? `sentence` : `uppercase`)};
+  min-height: 1em;
+  color: ${(props) =>
+    props.isLoading ? `rgba(51, 51, 51, .3)` : `rgb(51, 51, 51)`};
   @media (max-width: 1440px) {
     font-size: 24px;
     line-height: 60px;
@@ -77,6 +91,29 @@ const Title = styled.h1`
     line-height: 30px;
   }
   @media (max-width: 768px) and (orientation: landscape) {
+    margin-bottom: 12px;
+  }
+`;
+
+const LoadingText = styled.img`
+  animation: ${spinLoader} 1.1s linear infinite;
+  opacity: 0.2;
+  margin-bottom: 40px;
+  width: 80px;
+  transform: translate(12px, 12px);
+
+  @media (max-width: 1440px) {
+    width: 60px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 768px) {
+    width: 52px;
+    text-align: center;
+    margin-bottom: 12px;
+    line-height: 20px;
+  }
+  @media (max-width: 768px) and (orientation: landscape) {
+    width: 32px;
     margin-bottom: 12px;
   }
 `;
@@ -125,9 +162,11 @@ const PlaybackButton = styled.button`
     padding: 24px;
   }
 `;
+
 const PlaybackIcon = styled.img`
   width: 100%;
   height: 100%;
+  animation: ${(props) => props.isLoading && spinLoader} 1s linear infinite;
 `;
 const Runner = styled.div`
   width: 80%;
@@ -193,6 +232,7 @@ const PlayerButton = styled.button`
     margin: 0 auto;
   }
 `;
+
 const ButtonIcon = styled.img`
   width: 100%;
   height: 100%;
@@ -249,9 +289,15 @@ export default function Player({
     <>
       <PlayerContent background={background}>
         <Foreground>
-          <Title>
-            {isSubmitting ? `Loading ${environment}...` : locationName}
-          </Title>
+          {isSubmitting ? (
+            // add spinnerDark as source below for optional title loading spinner
+            <LoadingText />
+          ) : (
+            <Title isLoading={isSubmitting}>
+              {/* {isSubmitting ? `Loading ${environment}...` : locationName} */}
+              {locationName}
+            </Title>
+          )}
           <PlaybackContainer>
             <PlaybackButton
               className="skip"
@@ -261,7 +307,8 @@ export default function Player({
             </PlaybackButton>
             <PlaybackButton onClick={togglePlayback}>
               <PlaybackIcon
-                src={isSubmitting ? loading : isPlaying ? pause : play}
+                isLoading={isSubmitting}
+                src={isSubmitting ? spinner : isPlaying ? pause : play}
               />
             </PlaybackButton>
             <PlaybackButton
