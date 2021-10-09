@@ -10,7 +10,7 @@ import Footer from "../components/footer/Footer";
 import newOrleans from "../images/background.jpeg";
 import api from "../utils/api";
 import zipcodes from "zipcodes";
-import { shuffles } from "../utils/shuffles";
+import { shuffles, places } from "../utils/shuffles";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 
 export default function App() {
@@ -93,8 +93,12 @@ export default function App() {
   }
 
   function handleRandomize() {
-    const index = Math.floor(Math.random() * 5);
-    const { zipcode, query } = shuffles[index];
+    const zipIndex = Math.floor(Math.random() * (shuffles.length - 1));
+    const placeIindex = Math.floor(Math.random() * (places.length - 1));
+    // const randZip = Math.floor(Math.random() * 99950) + 1000;
+    const query = places[placeIindex];
+    const zipcode = shuffles[zipIndex];
+    console.log({ zipcode, query });
     setZipcode(zipcode);
     setEnvironment(query);
     updatePlayer(zipcode, query);

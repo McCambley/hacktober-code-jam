@@ -86,7 +86,7 @@ export default function Form({
             placeholder="119900"
             value={zipcode}
             onChange={(e) => setZipcode(e.target.value)}
-            minlength="5"
+            minlength="4"
             maxlength="5"
             required
           />
