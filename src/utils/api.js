@@ -28,7 +28,7 @@ class Api {
   }
 
   getSong(birdName) {
-    const randomNumber = Math.floor(Math.random() * 3);
+    const randomNumber = Math.floor(Math.random() * 2);
     // console.log({ randomNumber });
     const birdQuery = birdName.split(" ").join("+");
     return fetch(
@@ -36,6 +36,12 @@ class Api {
     )
       .then((res) => this._checkResponse(res))
       .then((res) => {
+        if (!res.recordings) {
+          return {
+            file: "",
+            url: "",
+          };
+        }
         return {
           file: res.recordings[randomNumber].file,
           url: res.recordings[randomNumber].url,

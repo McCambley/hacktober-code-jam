@@ -70,10 +70,10 @@ export default function App() {
       .getBirds(latitude, longitude)
       .then((data) => {
         // console.log(data);
-        const firstIndex = Math.floor(Math.random() * 2);
-        const secondIndex = Math.floor(Math.random() * 2) + firstIndex;
-        const thirdIndex = Math.floor(Math.random() * 2) + secondIndex;
-        const fourthIndex = Math.floor(Math.random() * 2) + thirdIndex;
+        const firstIndex = Math.floor(Math.random() * 2) + 1;
+        const secondIndex = Math.floor(Math.random() * 2) + 1 + firstIndex;
+        const thirdIndex = Math.floor(Math.random() * 2) + 1 + secondIndex;
+        const fourthIndex = Math.floor(Math.random() * 2) + 1 + thirdIndex;
 
         setBirdNames([
           data[firstIndex].comName,
@@ -84,12 +84,12 @@ export default function App() {
 
         // console.log(birdNames);
 
-        // console.log({
-        //   one: data[firstIndex].sciName,
-        //   two: data[secondIndex].sciName,
-        //   three: data[thirdIndex].sciName,
-        //   four: data[fourthIndex].sciName,
-        // });
+        console.log({
+          one: data[firstIndex].sciName,
+          two: data[secondIndex].sciName,
+          three: data[thirdIndex].sciName,
+          four: data[fourthIndex].sciName,
+        });
 
         return [
           api.getSong(data[firstIndex].sciName),
