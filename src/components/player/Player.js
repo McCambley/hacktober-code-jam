@@ -19,9 +19,8 @@ import liked from "../../images/liked.svg";
 // import Audio from "../audio/Audio";
 import ReactPlayer from "react-player";
 import Form from "../form/Form";
-import loading from "../../images/loading.svg";
 import spinner from "../../images/spinner.svg";
-import spinnerDark from "../../images/spinner-dark.svg";
+// import spinnerDark from "../../images/spinner-dark.svg";
 
 const spinLoader = keyframes`
   0% {
@@ -29,6 +28,15 @@ const spinLoader = keyframes`
   }
   100% {
     transform: rotate(360deg);
+  }
+`;
+
+const increaseProgress = keyframes`
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
   }
 `;
 
@@ -176,6 +184,7 @@ const Runner = styled.div`
   background-color: rgba(255, 255, 255, 0.69);
   border-radius: 2px;
   display: flex;
+  cursor: pointer;
   @media (max-width: 1440px) {
     margin-bottom: 50px;
   }
@@ -189,6 +198,9 @@ const Progress = styled.div`
   background-color: rgba(43, 141, 192, 1);
   border-radius: 2px;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  animation: ${({ isPlaying, isSubmitting }) =>
+      isSubmitting ? `none` : isPlaying ? increaseProgress : `none`}
+    30s linear infinite;
 `;
 
 const IconsContainer = styled.div`
@@ -257,17 +269,12 @@ export default function Player({
   const [isLiked, setIsLiked] = React.useState(false);
   const [birdTooltipOpen, setBirdTooltipOpen] = React.useState(false);
   const [settingsTooltipOpen, setSettingsTooltipOpen] = React.useState(false);
-  const [count, setCount] = React.useState(30);
+  // const [count, setCount] = React.useState(0);
   const firstSound = React.useRef();
 
   React.useEffect(() => {
     setIsPlaying(true);
   }, [sources]);
-
-  React.useState(() => {
-    const newCount = Math.floor(Math.random() * 100);
-    setCount(newCount);
-  }, [isLiked, isPlaying]);
 
   function toggleBirdInfo() {
     setBirdTooltipOpen(!birdTooltipOpen);
@@ -319,7 +326,11 @@ export default function Player({
             </PlaybackButton>
           </PlaybackContainer>
           <Runner>
-            <Progress progress={count} />
+            <Progress
+              isPlaying={isPlaying}
+              isSubmitting={isSubmitting}
+              progress={0}
+            />
           </Runner>
           <IconsContainer>
             <PlayerButton onClick={toggleLike}>

@@ -42,10 +42,6 @@ const BirdLink = styled.a`
 `;
 
 export default function BirdInfo({ birdNames, sources }) {
-  // React.useEffect(() => {
-  //   console.log(birdNames[0] === birdNames[1]);
-  // });
-
   return (
     // <BirdDisplay>
     //   {/* <Bird>{birdNames[0]}</Bird>

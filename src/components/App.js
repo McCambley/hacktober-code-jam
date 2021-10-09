@@ -28,27 +28,6 @@ export default function App() {
   // ux
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  React.useEffect(() => {
-    // api
-    //   .getBirds(41.127, -73.3591)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.error(err));
-    // api
-    //   .getSong("Cardinalis cardinalis")
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.error(err));
-    // api
-    //   .getImage("sunset")
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.error(err));
-  }, []);
-
   function handleSubmit(evt, z, e) {
     evt.preventDefault();
     updatePlayer(z, e);
@@ -57,7 +36,6 @@ export default function App() {
   function updatePlayer(z, e) {
     setIsSubmitting(true);
     setSources([]);
-    console.log({ z, e });
     const newLocation = zipcodes.lookup(z);
     if (!newLocation) {
       console.log("That's not a place!");
@@ -69,7 +47,6 @@ export default function App() {
     api
       .getBirds(latitude, longitude)
       .then((data) => {
-        // console.log(data);
         const firstIndex = Math.floor(Math.random() * 2) + 1;
         const secondIndex = Math.floor(Math.random() * 2) + 1 + firstIndex;
         const thirdIndex = Math.floor(Math.random() * 2) + 1 + secondIndex;
@@ -82,15 +59,6 @@ export default function App() {
           data[fourthIndex].comName,
         ]);
 
-        // console.log(birdNames);
-
-        console.log({
-          one: data[firstIndex].sciName,
-          two: data[secondIndex].sciName,
-          three: data[thirdIndex].sciName,
-          four: data[fourthIndex].sciName,
-        });
-
         return [
           api.getSong(data[firstIndex].sciName),
           api.getSong(data[secondIndex].sciName),
@@ -100,7 +68,6 @@ export default function App() {
       })
       .then((promises) => {
         Promise.all(promises).then((values) => {
-          // console.log(values);
           setSources(values);
           updateBackground(e);
           setIsSubmitting(false);
@@ -117,7 +84,6 @@ export default function App() {
     api
       .getImage(e)
       .then((res) => {
-        // console.log(res.urls.regular);
         return setBackgroundImage(res.urls.regular);
       })
       .catch((error) => {
