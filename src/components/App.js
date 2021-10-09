@@ -38,7 +38,8 @@ export default function App() {
     setSources([]);
     const newLocation = zipcodes.lookup(z);
     if (!newLocation) {
-      console.log("That's not a place!");
+      alert(`Please choose a valid zipcode`);
+      setIsSubmitting(false);
       return;
     }
     const { latitude, longitude, city, state } = newLocation;
