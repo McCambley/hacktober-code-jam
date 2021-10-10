@@ -69,6 +69,7 @@ const Title = styled.h3`
   font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 36px;
+  text-transform: uppercase;
   line-height: 60px;
   @media (max-width: 768px) {
     font-size: 24px;

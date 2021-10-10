@@ -7,13 +7,18 @@ import close from "../../images/close.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export default function Header({ zipcode, environment, updatePlayer }) {
+export default function Header({
+  zipcode,
+  environment,
+  updatePlayer,
+  playerView,
+}) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   function toggleMenu() {
     setMenuOpen(!menuOpen);
   }
   return (
-    <div className="header">
+    <div className={`header ${playerView && `header_hide`}`}>
       <Link to="/">
         <img src={logo} className="header__logo" alt="Bird Company" />
       </Link>

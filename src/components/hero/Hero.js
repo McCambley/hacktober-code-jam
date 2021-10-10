@@ -63,18 +63,30 @@ const Subtitle = styled(Link)`
   font-weight: 400;
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
   @media (max-width: 1440px) {
     font-size: 18px;
     line-height: 24px;
   }
 `;
 
-export default function Hero() {
+export default function Hero({ zipcode, environment, updatePlayer }) {
   return (
     <Section className="hero" background={hero}>
       <TextContainer>
         <Title>Birdsongs</Title>
-        <Subtitle to="/player">Bring the great outdoors to you</Subtitle>
+        <Subtitle
+          to="/player"
+          onClick={() => {
+            updatePlayer(zipcode, environment);
+          }}
+        >
+          Bring the great outdoors to you
+        </Subtitle>
       </TextContainer>
     </Section>
   );

@@ -76,7 +76,7 @@
   display: none;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1024px) {
   .header {
     padding: 8px 42px;
   }
@@ -129,7 +129,7 @@
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
-  .header {
+  .header_hide {
     display: none;
   }
 }

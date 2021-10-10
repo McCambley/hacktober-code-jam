@@ -10,7 +10,7 @@ import Footer from "../components/footer/Footer";
 import newOrleans from "../images/background.jpeg";
 import api from "../utils/api";
 import zipcodes from "zipcodes";
-import { shuffles, places } from "../utils/shuffles";
+import { places } from "../utils/shuffles";
 import { useStateWithCallbackLazy } from "use-state-with-callback";
 
 export default function App() {
@@ -93,12 +93,9 @@ export default function App() {
   }
 
   function handleRandomize() {
-    const zipIndex = Math.floor(Math.random() * (shuffles.length - 1));
     const placeIindex = Math.floor(Math.random() * (places.length - 1));
-    // const randZip = Math.floor(Math.random() * 99950) + 1000;
     const query = places[placeIindex];
-    const zipcode = shuffles[zipIndex];
-    console.log({ zipcode, query });
+    const zipcode = zipcodes.random().zip;
     setZipcode(zipcode);
     setEnvironment(query);
     updatePlayer(zipcode, query);
@@ -106,13 +103,14 @@ export default function App() {
 
   return (
     <div className="page">
-      <Header
-        zipcode={zipcode}
-        environment={environment}
-        updatePlayer={updatePlayer}
-      />
       <Switch>
         <Route path="/player">
+          <Header
+            zipcode={zipcode}
+            environment={environment}
+            updatePlayer={updatePlayer}
+            playerView={true}
+          />
           <Player
             background={backgroundImage}
             locationName={locationName}
@@ -130,7 +128,17 @@ export default function App() {
           />
         </Route>
         <Route exact path="/">
-          <Hero />
+          <Header
+            zipcode={zipcode}
+            environment={environment}
+            updatePlayer={updatePlayer}
+            playerView={false}
+          />
+          <Hero
+            zipcode={zipcode}
+            environment={environment}
+            updatePlayer={updatePlayer}
+          />
           <About
             zipcode={zipcode}
             environment={environment}
