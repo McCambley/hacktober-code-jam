@@ -47,7 +47,7 @@ const TextWrapper = styled.div`
 `;
 const Title = styled.h3`
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Bitter", serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;

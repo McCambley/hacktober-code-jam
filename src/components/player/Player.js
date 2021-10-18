@@ -81,7 +81,7 @@ const Foreground = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Bitter", serif;
   font-weight: 700;
   margin-bottom: 70px;
   font-size: 42px;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import styled from "styled-components";
-import hero from "../../images/hero.png";
+import hero from "../../images/hero.jpeg";
 import { Link } from "react-router-dom";
 
 const Section = styled.section`
@@ -31,6 +31,9 @@ const TextContainer = styled.div`
   justify-content: center;
   padding: 32px;
   background: rgba(255, 255, 255, 0.32);
+  /* background-color: rgba(51, 51, 51, 0.2); */
+  box-shadow: 0 4px 8px rgba(51, 51, 51, 0.2);
+
   box-sizing: border-box;
   border-radius: 24px;
   backdrop-filter: blur(10px);
@@ -41,16 +44,19 @@ const TextContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
+  /* font-family: "Playfair Display", serif; */
+  font-family: "Italianno", cursive;
+  color: #333;
+  /* text-transform: uppercase; */
   margin: 0;
-  font-size: 64px;
+  font-size: 80px;
   line-height: 60px;
   text-align: center;
-  margin-bottom: 20px;
-  font-weight: 700;
+  margin-bottom: 24px;
+  font-weight: 400;
   @media (max-width: 1440px) {
-    font-size: 36px;
+    font-size: 64px;
+    margin-bottom: 12px;
     line-height: 60px;
   }
 `;
@@ -62,7 +68,8 @@ const Subtitle = styled(Link)`
   text-align: center;
   font-weight: 400;
   text-decoration: none;
-  color: inherit;
+  color: #333;
+  /* color: #fff; */
   transition: opacity 0.15s ease;
 
   &:hover {
@@ -78,7 +85,7 @@ export default function Hero({ zipcode, environment, updatePlayer }) {
   return (
     <Section className="hero" background={hero}>
       <TextContainer>
-        <Title>Birdsongs</Title>
+        <Title>Aviary</Title>
         <Subtitle
           to="/player"
           onClick={() => {

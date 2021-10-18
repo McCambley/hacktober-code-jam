@@ -66,7 +66,7 @@ const Title = styled.h3`
 
   margin: 0;
   width: 100%;
-  font-family: "Playfair Display", serif;
+  font-family: "Bitter", serif;
   font-weight: 700;
   font-size: 36px;
   text-transform: uppercase;
@@ -153,7 +153,7 @@ export default function Destinations({
   return (
     <Section id="destinations">
       <Title>Destinations</Title>
-      <Link to="/player">All destinations →</Link>
+      <Link to="/player">View more →</Link>
       <Directions>
         Enter your zip-code or choose one of suggested destinations.
       </Directions>

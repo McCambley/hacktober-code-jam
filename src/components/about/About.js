@@ -37,6 +37,7 @@ const Title = styled.h3`
   margin: 0;
   text-transform: uppercase;
   font-family: "Playfair Display", serif;
+  font-family: "Bitter", serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 36px;
@@ -85,9 +86,12 @@ export default function About({ zipcode, environment, updatePlayer }) {
       <Container>
         <Title>Listen to the birds</Title>
         <Subtitle>
-          Experience the sights and sounds of your favorite destinations from
-          the comfort of your own home. When you can't travel the globe, bring
-          the great outdoors to you.
+          Choose a destination and be transported by a soundscape of beautiful
+          songbirds spotted recently in your favorite locations. Aviary uses
+          information sourced from ornithologists from around the country to let
+          you experience the sights and sounds of the world from the comfort of
+          your own home. When you can't travel the globe, we bring the great
+          outdoors to you.
         </Subtitle>
         <NewLink
           to="/player"

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import logo from "../../images/logo.svg";
+import logo from "../../images/birdlogo.svg";
 import search from "../../images/search.svg";
 import hamburger from "../../images/hamburger.svg";
 import close from "../../images/close.svg";
@@ -22,6 +22,9 @@ export default function Header({
       <Link to="/">
         <img src={logo} className="header__logo" alt="Bird Company" />
       </Link>
+      {/* <Link to="/" className="header__logo">
+        A
+      </Link> */}
       <ul className={`header__nav ${menuOpen ? "header__nav_open" : ""}`}>
         <li className="header__nav-item">
           <HashLink to="/#about" className="header__link" href="#about">

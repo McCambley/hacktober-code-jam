@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.svg";
+import logo from "../../images/birdlogo-dark.svg";
 import facebook from "../../images/facebook.svg";
 import twitter from "../../images/twitter.svg";
 import instagram from "../../images/instagram.svg";
@@ -31,6 +31,7 @@ const Copyright = styled.div`
 `;
 const Logo = styled.img`
   margin-bottom: 50px;
+  width: 64px;
   cursor: pointer;
   @media (max-width: 768px) {
     margin-bottom: 24px;
