@@ -121,7 +121,7 @@ export default function Footer() {
           />
         </div>
       </Contact>
-      <Copyright>© Birdsongs. All rights reserved.</Copyright>
+      <Copyright>© Aviary. All rights reserved.</Copyright>
     </Container>
   );
 }
