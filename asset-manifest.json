@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hacktober-code-jam/static/css/main.12f2fca7.chunk.css",
-    "main.js": "/hacktober-code-jam/static/js/main.33559b09.chunk.js",
-    "main.js.map": "/hacktober-code-jam/static/js/main.33559b09.chunk.js.map",
+    "main.js": "/hacktober-code-jam/static/js/main.b44ea90a.chunk.js",
+    "main.js.map": "/hacktober-code-jam/static/js/main.b44ea90a.chunk.js.map",
     "runtime-main.js": "/hacktober-code-jam/static/js/runtime-main.000b6c15.js",
     "runtime-main.js.map": "/hacktober-code-jam/static/js/runtime-main.000b6c15.js.map",
     "static/js/2.0143c597.chunk.js": "/hacktober-code-jam/static/js/2.0143c597.chunk.js",
@@ -42,6 +42,6 @@
     "static/js/runtime-main.000b6c15.js",
     "static/js/2.0143c597.chunk.js",
     "static/css/main.12f2fca7.chunk.css",
-    "static/js/main.33559b09.chunk.js"
+    "static/js/main.b44ea90a.chunk.js"
   ]
 }
