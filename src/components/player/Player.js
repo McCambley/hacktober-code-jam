@@ -373,6 +373,7 @@ export default function Player({
         width="0"
         playbackRate={1}
         volume={0.3}
+        controls={false}
       />
       <ReactPlayer
         playing={isPlaying}
@@ -382,6 +383,7 @@ export default function Player({
         width="0"
         playbackRate={0.9}
         volume={0.2}
+        controls={false}
       />
       <ReactPlayer
         playing={isPlaying}
@@ -391,6 +393,7 @@ export default function Player({
         width="0"
         playbackRate={0.8}
         volume={0.5}
+        controls={false}
       />
       <ReactPlayer
         playing={isPlaying}
@@ -400,6 +403,7 @@ export default function Player({
         width="0"
         playbackRate={0.95}
         volume={0.8}
+        controls={false}
       />
     </>
   );
