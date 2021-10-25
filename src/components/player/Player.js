@@ -368,6 +368,11 @@ export default function Player({
         ref={firstSound}
         playing={isPlaying}
         url={sources[0] && sources[0].file}
+        config={{
+          file: {
+            forceAudio: true,
+          },
+        }}
         loop={true}
         height="0"
         width="0"
@@ -378,6 +383,11 @@ export default function Player({
       <ReactPlayer
         playing={isPlaying}
         url={sources[1] && sources[1].file}
+        config={{
+          file: {
+            forceAudio: true,
+          },
+        }}
         loop={true}
         height="0"
         width="0"
@@ -388,6 +398,11 @@ export default function Player({
       <ReactPlayer
         playing={isPlaying}
         url={sources[2] && sources[2].file}
+        config={{
+          file: {
+            forceAudio: true,
+          },
+        }}
         loop={true}
         height="0"
         width="0"
@@ -398,6 +413,11 @@ export default function Player({
       <ReactPlayer
         playing={isPlaying}
         url={sources[3] && sources[3].file}
+        config={{
+          file: {
+            forceAudio: true,
+          },
+        }}
         loop={true}
         height="0"
         width="0"
