@@ -16,9 +16,47 @@ Our group designed and built **[Aviary](https://mccambley.github.io/hacktober-co
 ## 🛠 Technologies
 
 - **React** and **React Router** handle the frontend of the application
-- **eBird Api**: Provides data for what birds have been spotted recently in the user's chosen location
-- **Xeno-canto Api**: Provides the songs of birds found by the **eBird Api**
-- **Unsplash**: Provides the images to match the landscape chosen by the user
+- **Styled-Components** make the frontend look good
+- **[eBird Api](https://documenter.getpostman.com/view/664302/S1ENwy59)**: Provides data for what birds have been spotted recently in the user's chosen location
+- **[Xeno-canto Api](https://xeno-canto.org/explore/api)**: Provides the songs of birds found by the **eBird Api**
+- **[Unsplash](https://unsplash.com/developers)**: Provides the images to match the landscape chosen by the user
+
+## ✨ Demo
+
+---
+
+### Landing Page
+
+### Player
+
+### Customize Player
+
+### View Birds
+
+---
+
+## 🧑‍💻 Get Started
+
+**Clone**
+
+```
+$ git clone https://github.com/McCambley/hacktober-code-jam.git
+```
+
+**Install**
+
+```
+$ cd hacktober-code-jam
+$ npm i
+```
+
+**Launch**
+
+```
+$ npm run start
+```
+
+---
 
 ### To Do:
 
