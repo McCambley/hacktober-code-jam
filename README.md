@@ -27,11 +27,19 @@ Our group designed and built **[Aviary](https://mccambley.github.io/hacktober-co
 
 ### Landing Page
 
+![aviary_demo](https://user-images.githubusercontent.com/74033573/145722372-de483550-e73a-4e5f-a4a2-1af4794b7283.png)
+
 ### Player
+
+![Player](https://user-images.githubusercontent.com/74033573/145722374-1fab4c28-3d4e-4240-876c-e9f45e53b7fa.png)
 
 ### Customize Player
 
+![Customize Player](https://user-images.githubusercontent.com/74033573/145722376-0a47e645-b806-48ee-91b2-2ae590467d7e.png)
+
 ### View Birds
+
+![View Birds](https://user-images.githubusercontent.com/74033573/145722386-18cd28b7-34cd-40d7-9f23-1e37a3fa3ecc.png)
 
 ---
 
