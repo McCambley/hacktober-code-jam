@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hacktober-code-jam/static/css/main.12f2fca7.chunk.css",
-    "main.js": "/hacktober-code-jam/static/js/main.6e587516.chunk.js",
-    "main.js.map": "/hacktober-code-jam/static/js/main.6e587516.chunk.js.map",
+    "main.js": "/hacktober-code-jam/static/js/main.619d82b8.chunk.js",
+    "main.js.map": "/hacktober-code-jam/static/js/main.619d82b8.chunk.js.map",
     "runtime-main.js": "/hacktober-code-jam/static/js/runtime-main.000b6c15.js",
     "runtime-main.js.map": "/hacktober-code-jam/static/js/runtime-main.000b6c15.js.map",
     "static/js/2.44f2b4f8.chunk.js": "/hacktober-code-jam/static/js/2.44f2b4f8.chunk.js",
@@ -13,6 +13,7 @@
     "static/css/main.12f2fca7.chunk.css.map": "/hacktober-code-jam/static/css/main.12f2fca7.chunk.css.map",
     "static/js/2.44f2b4f8.chunk.js.LICENSE.txt": "/hacktober-code-jam/static/js/2.44f2b4f8.chunk.js.LICENSE.txt",
     "static/media/about.66acfbf6.jpeg": "/hacktober-code-jam/static/media/about.66acfbf6.jpeg",
+    "static/media/arrow.fb19013e.svg": "/hacktober-code-jam/static/media/arrow.fb19013e.svg",
     "static/media/background.fbbfe280.jpeg": "/hacktober-code-jam/static/media/background.fbbfe280.jpeg",
     "static/media/bird.b61ce423.svg": "/hacktober-code-jam/static/media/bird.b61ce423.svg",
     "static/media/birdlogo-dark.5836b321.svg": "/hacktober-code-jam/static/media/birdlogo-dark.5836b321.svg",
@@ -42,6 +43,6 @@
     "static/js/runtime-main.000b6c15.js",
     "static/js/2.44f2b4f8.chunk.js",
     "static/css/main.12f2fca7.chunk.css",
-    "static/js/main.6e587516.chunk.js"
+    "static/js/main.619d82b8.chunk.js"
   ]
 }
