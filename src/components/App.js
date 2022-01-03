@@ -140,6 +140,7 @@ export default function App() {
             updatePlayer={updatePlayer}
           />
           <About
+            id="about"
             zipcode={zipcode}
             environment={environment}
             updatePlayer={updatePlayer}

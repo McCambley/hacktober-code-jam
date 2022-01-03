@@ -3,6 +3,7 @@ import "./Hero.css";
 import styled from "styled-components";
 import hero from "../../images/hero.jpeg";
 import { Link } from "react-router-dom";
+import arrow from "../../images/arrow.svg";
 
 const Section = styled.section`
   background-image: url(${(props) => props.background || hero});
@@ -11,8 +12,8 @@ const Section = styled.section`
   height: 600px;
   min-height: 100vh;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   padding: 120px 164px;
   box-sizing: border-box;
   @media (max-width: 1440px) {
@@ -30,14 +31,16 @@ const TextContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 32px;
-  background: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.7);
   /* background-color: rgba(51, 51, 51, 0.2); */
   box-shadow: 0 4px 8px rgba(51, 51, 51, 0.2);
 
   box-sizing: border-box;
   border-radius: 24px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
   max-width: 100%;
+  width: 100%;
+  height: 100%;
   @media (max-width: 1440px) {
     padding: 36px 44px;
   }
@@ -49,7 +52,7 @@ const Title = styled.h1`
   color: #333;
   /* text-transform: uppercase; */
   margin: 0;
-  font-size: 80px;
+  font-size: 96px;
   line-height: 60px;
   text-align: center;
   margin-bottom: 24px;
@@ -63,6 +66,7 @@ const Title = styled.h1`
 
 const Subtitle = styled(Link)`
   margin: 0;
+  margin-bottom: 24px;
   font-size: 24px;
   line-height: 24px;
   text-align: center;
@@ -81,6 +85,15 @@ const Subtitle = styled(Link)`
   }
 `;
 
+const Arrow = styled.a`
+  background-image: url(${arrow});
+  background-size: contain;
+  background-position: center;
+  height: 28px;
+  width: 28px;
+  transform: rotate(90deg);
+`;
+
 export default function Hero({ zipcode, environment, updatePlayer }) {
   return (
     <Section className="hero" background={hero}>
@@ -94,6 +107,7 @@ export default function Hero({ zipcode, environment, updatePlayer }) {
         >
           Bring the great outdoors to you
         </Subtitle>
+        <Arrow href="#about" />
       </TextContainer>
     </Section>
   );
