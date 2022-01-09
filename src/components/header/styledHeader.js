@@ -25,6 +25,7 @@ export const Section = styled.section`
   @media (max-width: 768px) {
     height: 76px;
   }
+
   @media (max-width: 768px) and (orientation: landscape) {
     display: none;
   }
