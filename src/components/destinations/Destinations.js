@@ -1,5 +1,4 @@
 import React from "react";
-import "./Destinations.css";
 import styled from "styled-components";
 import Form from "../form/Form";
 import Place from "../place/Place";

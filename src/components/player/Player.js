@@ -1,26 +1,19 @@
 import React from "react";
-import "./Player.css";
 import styled, { keyframes } from "styled-components";
-// import Form from "../form/Form";
-// import Settings from "../settings/Settings";
 import BirdInfo from "../bird-info/BirdInfo";
 import Popup from "../popup/Popup";
-// import defaultBackground from "../../images/background.jpeg";
 import bird from "../../images/bird.svg";
 import play from "../../images/play.svg";
 import pause from "../../images/pause.svg";
 import skipForward from "../../images/skip-f.svg";
 import skipBack from "../../images/skip-b.svg";
-// import settings from "../../images/settings.svg";
 import shuffle from "../../images/shuffle.svg";
 import mountain from "../../images/mountain.svg";
 import heart from "../../images/heart.svg";
 import liked from "../../images/liked.svg";
-// import Audio from "../audio/Audio";
 import ReactPlayer from "react-player";
 import Form from "../form/Form";
 import spinner from "../../images/spinner.svg";
-// import spinnerDark from "../../images/spinner-dark.svg";
 
 const spinLoader = keyframes`
   0% {
