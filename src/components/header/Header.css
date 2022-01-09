@@ -73,17 +73,18 @@
   align-items: center;
   padding: 8px 56px;
   background: #fff;
-  color: #2b8dc0;
-  border: 2px solid #2b8dc0;
+  color: #9e9e9e;
+  border: 2px solid #9e9e9e;
   border-radius: 8px;
   font-size: 18px;
   line-height: 24px;
+  cursor: pointer;
   transition: color 0.15s ease, border 0.15s ease;
 }
 
 .header__button:hover {
-  color: #73b0b7;
-  border: 2px solid #73b0b7;
+  color: #b8b8b8;
+  border: 2px solid #b8b8b8;
 }
 
 .header__hamburger {

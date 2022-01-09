@@ -14,8 +14,13 @@ export default function Header({
   playerView,
 }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
+
   function toggleMenu() {
     setMenuOpen(!menuOpen);
+  }
+
+  function handleLogin() {
+    alert("Login features not enabled in Beta.");
   }
   return (
     <div className={`header ${playerView && `header_hide`}`}>
@@ -53,9 +58,14 @@ export default function Header({
         src={menuOpen ? close : hamburger}
         alt="Magnifying glass"
       />
-      <Link to="/" className="header__button">
+      <button
+        type="button"
+        onClick={handleLogin}
+        to="/"
+        className="header__button"
+      >
         Login
-      </Link>
+      </button>
     </div>
   );
 }
