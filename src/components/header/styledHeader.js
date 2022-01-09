@@ -107,6 +107,15 @@ export const NavLink = styled(HashLink)`
   }
 `;
 
+export const Mag = styled.img`
+  transition: opacity 0.15s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
 export const Button = styled.button`
   color: inherit;
   text-decoration: none;

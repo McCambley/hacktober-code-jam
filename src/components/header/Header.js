@@ -13,6 +13,7 @@ import {
   NavLink,
   Button,
   Hamburger,
+  Mag,
 } from "./styledHeader";
 
 export default function Header({
@@ -30,51 +31,39 @@ export default function Header({
   function handleLogin() {
     alert("Login features not enabled in Beta.");
   }
+
   return (
     <Section playerView={playerView}>
       <Link to="/">
-        <Logo src={logo} className="header__logo" alt="Bird Company" />
+        <Logo src={logo} />
       </Link>
-      {/* <Link to="/" className="header__logo">
-        A
-      </Link> */}
-      <Navigation
-        $isOpen={menuOpen}
-        className={`header__nav ${menuOpen ? "header__nav_open" : ""}`}
-      >
-        <Item className="header__nav-item">
-          <NavLink to="/#about" className="header__link" href="#about">
+
+      <Navigation $isOpen={menuOpen}>
+        <Item>
+          <NavLink to="/#about" href="#about">
             About us
           </NavLink>
         </Item>
-        <Item className="header__nav-item">
+        <Item>
           <NavLink
             to="/player"
             onClick={() => {
               updatePlayer(zipcode, environment);
             }}
-            className="header__link"
-            href="#destinations"
           >
             Player
           </NavLink>
         </Item>
-        <Item hide className="header__nav-item header__nav-item_mag">
-          <img className="header__link" src={search} alt="Magnifying glass" />
+        <Item hide>
+          <Mag src={search} alt="Magnifying glass" />
         </Item>
       </Navigation>
       <Hamburger
-        className="header__hamburger"
         onClick={toggleMenu}
         src={menuOpen ? close : hamburger}
         alt="Magnifying glass"
       />
-      <Button
-        type="button"
-        onClick={handleLogin}
-        to="/"
-        className="header__button"
-      >
+      <Button type="button" onClick={handleLogin} to="/">
         Login
       </Button>
     </Section>
