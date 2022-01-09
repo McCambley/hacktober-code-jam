@@ -1,11 +1,19 @@
 import React from "react";
-import "./Header.css";
 import logo from "../../images/birdlogo.svg";
 import search from "../../images/search.svg";
 import hamburger from "../../images/hamburger.svg";
 import close from "../../images/close.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import {
+  Section,
+  Logo,
+  Navigation,
+  Item,
+  NavLink,
+  Button,
+  Hamburger,
+} from "./styledHeader";
 
 export default function Header({
   zipcode,
@@ -23,21 +31,24 @@ export default function Header({
     alert("Login features not enabled in Beta.");
   }
   return (
-    <div className={`header ${playerView && `header_hide`}`}>
+    <Section playerView={playerView}>
       <Link to="/">
-        <img src={logo} className="header__logo" alt="Bird Company" />
+        <Logo src={logo} className="header__logo" alt="Bird Company" />
       </Link>
       {/* <Link to="/" className="header__logo">
         A
       </Link> */}
-      <ul className={`header__nav ${menuOpen ? "header__nav_open" : ""}`}>
-        <li className="header__nav-item">
-          <HashLink to="/#about" className="header__link" href="#about">
+      <Navigation
+        $isOpen={menuOpen}
+        className={`header__nav ${menuOpen ? "header__nav_open" : ""}`}
+      >
+        <Item className="header__nav-item">
+          <NavLink to="/#about" className="header__link" href="#about">
             About us
-          </HashLink>
-        </li>
-        <li className="header__nav-item">
-          <Link
+          </NavLink>
+        </Item>
+        <Item className="header__nav-item">
+          <NavLink
             to="/player"
             onClick={() => {
               updatePlayer(zipcode, environment);
@@ -46,26 +57,26 @@ export default function Header({
             href="#destinations"
           >
             Player
-          </Link>
-        </li>
-        <li className="header__nav-item header__nav-item_mag">
+          </NavLink>
+        </Item>
+        <Item hide className="header__nav-item header__nav-item_mag">
           <img className="header__link" src={search} alt="Magnifying glass" />
-        </li>
-      </ul>
-      <img
+        </Item>
+      </Navigation>
+      <Hamburger
         className="header__hamburger"
         onClick={toggleMenu}
         src={menuOpen ? close : hamburger}
         alt="Magnifying glass"
       />
-      <button
+      <Button
         type="button"
         onClick={handleLogin}
         to="/"
         className="header__button"
       >
         Login
-      </button>
-    </div>
+      </Button>
+    </Section>
   );
 }
