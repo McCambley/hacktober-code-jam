@@ -1,5 +1,5 @@
 import React from "react";
-import "./Hero.css";
+import {} from "./styledHero.js";
 import styled from "styled-components";
 import hero from "../../images/hero.jpeg";
 import { Link } from "react-router-dom";
