@@ -64,12 +64,14 @@ export default function Destinations({
       </Directions>
       <FormSection
         displayZip={true}
+        displayLoc={true}
         zipcode={zipcode}
         environment={environment}
         setZipcode={setZipcode}
         setEnvironment={setEnvironment}
         handleSubmit={handleSubmit}
         isSubmitting={isSubmitting}
+        page="landing"
       />
       <Places>
         {placeList.map((listedLocation, index) => {

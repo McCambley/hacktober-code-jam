@@ -5,6 +5,8 @@ import {
   Input,
   Label,
   Button,
+  CurrentLocation,
+  ButtonContainer,
 } from "./styledForm";
 
 export default function Form({
@@ -17,11 +19,14 @@ export default function Form({
   setEnvironment,
   handleSubmit,
   isSubmitting,
+  displayLoc,
+  page = "player",
 }) {
   return (
     <FormSection
       onSubmit={(evt) => handleSubmit(evt, zipcode, environment)}
       double={double}
+      page={page}
     >
       {displayZip && (
         <InputContainer>
@@ -54,9 +59,12 @@ export default function Form({
           <Label htmlFor="environment">Enter landscape</Label>
         </InputContainer>
       )}
-      <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Loading..." : "Submit"}
-      </Button>
+      <ButtonContainer>
+        {displayLoc && <CurrentLocation />}
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Loading..." : "Submit"}
+        </Button>
+      </ButtonContainer>
     </FormSection>
   );
 }

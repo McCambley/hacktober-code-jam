@@ -1,16 +1,31 @@
 import styled from "styled-components";
+import location from "../../images/location.svg";
+import locationActive from "../../images/location-active.svg";
 
 export const FormSection = styled.form`
   width: 100%;
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(${(props) => props.columns}, 1fr);
+  /* grid-template-columns: repeat(${(props) => props.columns}, 1fr);
   grid-template-columns: ${({ double }) =>
-    double ? `1fr 1fr 1fr` : `2fr 1fr`};
+    double ? `1fr 1fr 1fr` : `2fr 1fr`}; */
+  grid-template-columns: ${({ page }) => {
+    if (page === "player") {
+      return `1fr 1fr 1fr`;
+    } else if (page === "landing") {
+      return `3fr 2fr`;
+    }
+  }};
   justify-content: space-between;
   grid-area: form;
+
+  @media (max-width: 1024px) and (orientation: portrait) {
+    gap: 8px;
+  }
+
   @media (max-width: 768px) and (orientation: portrait) {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 `;
 export const InputContainer = styled.div`
@@ -39,6 +54,21 @@ export const Label = styled.label`
   padding-top: 8px;
   color: #747474;
 `;
+export const ButtonContainer = styled.div`
+  display: grid;
+  gap: 16px;
+  grid-template-areas: "a b";
+
+  @media (max-width: 1024px) and (orientation: portrait) {
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) and (orientation: portrait) {
+    grid-template-areas: "b b b a";
+    gap: 12px;
+  }
+`;
+
 export const Button = styled.button`
   height: 56px;
   background-color: #2b8dc0;
@@ -50,6 +80,7 @@ export const Button = styled.button`
   border: 2px solid #2b8dc0;
   cursor: pointer;
   transition: all 0.15s ease;
+  grid-area: b;
 
   &:hover {
     background-color: #fff;
@@ -59,5 +90,28 @@ export const Button = styled.button`
   @media (max-width: 1440px) {
     font-size: 18px;
     line-height: 24px;
+  }
+`;
+
+export const CurrentLocation = styled.button`
+  background-image: url(${location});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 56px;
+  background-color: #2b8dc0;
+  border: none;
+  border-radius: 8px;
+  border: 2px solid #2b8dc0;
+  padding: 0;
+  cursor: pointer;
+  grid-area: a;
+
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: #fff;
+    background-image: url(${locationActive});
+    color: #2b8dc0;
   }
 `;
