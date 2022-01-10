@@ -61,9 +61,7 @@ export default function Form({
         </InputContainer>
       )}
       <ButtonContainer>
-        {displayLoc && (
-          <CurrentLocation type="button" onClick={handleCurrentLocation} />
-        )}
+        <CurrentLocation type="button" onClick={handleCurrentLocation} />
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Loading..." : "Submit"}
         </Button>
