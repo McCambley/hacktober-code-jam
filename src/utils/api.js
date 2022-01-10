@@ -49,6 +49,20 @@ class Api {
       .catch((err) => console.error(err));
   }
 
+  getPlace(lat, long) {
+    return fetch(
+      `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${long}&format=json`
+    )
+      .then((res) => this._checkResponse(res))
+      .then((res) => {
+        if (res.error) {
+          throw new Error(`There's been an error fetching location`);
+        }
+        return res;
+      })
+      .catch((err) => console.error(err));
+  }
+
   getImage(environment) {
     let adjustedEnvironment = environment.split(" ");
     return this._unsplashApi.photos

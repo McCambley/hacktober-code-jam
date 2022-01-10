@@ -47,13 +47,10 @@ export default function App() {
           const { latitude, longitude } = location.coords;
           const placeIndex = Math.floor(Math.random() * (places.length - 1));
           const query = places[placeIndex];
-          setLocationName(
-            `Lat: ${latitude.toString().substring(0, 5)} | Long: ${longitude
-              .toString()
-              .substring(0, 5)}`
-          );
-          console.log({ latitude, longitude, query });
-          return getBirds(latitude, longitude, query);
+          setEnvironment(query);
+          updatePlaceName(latitude, longitude);
+          getBirds(latitude, longitude, query);
+          return;
         },
         // Failed
         (error) => {
@@ -62,6 +59,21 @@ export default function App() {
         }
       );
     }
+  }
+
+  function updatePlaceName(latitude, longitude) {
+    return api
+      .getPlace(latitude, longitude)
+      .then((response) => {
+        setZipcode(response.address.postcode);
+        setLocationName(
+          `${response.address.village}, ${response.address.state}`
+        );
+      })
+      .catch((error) => {
+        setLocationName(`Lat: ${latitude} | Long: ${longitude}`);
+        console.error(error);
+      });
   }
 
   function updatePlayer(z, e) {
