@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/hacktober-code-jam/static/css/main.12f2fca7.chunk.css",
-    "main.js": "/hacktober-code-jam/static/js/main.619d82b8.chunk.js",
-    "main.js.map": "/hacktober-code-jam/static/js/main.619d82b8.chunk.js.map",
-    "runtime-main.js": "/hacktober-code-jam/static/js/runtime-main.000b6c15.js",
-    "runtime-main.js.map": "/hacktober-code-jam/static/js/runtime-main.000b6c15.js.map",
-    "static/js/2.44f2b4f8.chunk.js": "/hacktober-code-jam/static/js/2.44f2b4f8.chunk.js",
-    "static/js/2.44f2b4f8.chunk.js.map": "/hacktober-code-jam/static/js/2.44f2b4f8.chunk.js.map",
-    "static/js/3.fc7945c0.chunk.js": "/hacktober-code-jam/static/js/3.fc7945c0.chunk.js",
-    "static/js/3.fc7945c0.chunk.js.map": "/hacktober-code-jam/static/js/3.fc7945c0.chunk.js.map",
+    "main.css": "/hacktober-code-jam/static/css/main.f04717f2.chunk.css",
+    "main.js": "/hacktober-code-jam/static/js/main.c34c2b0f.chunk.js",
+    "main.js.map": "/hacktober-code-jam/static/js/main.c34c2b0f.chunk.js.map",
+    "runtime-main.js": "/hacktober-code-jam/static/js/runtime-main.e96d63c6.js",
+    "runtime-main.js.map": "/hacktober-code-jam/static/js/runtime-main.e96d63c6.js.map",
+    "static/js/2.e7d6d1f9.chunk.js": "/hacktober-code-jam/static/js/2.e7d6d1f9.chunk.js",
+    "static/js/2.e7d6d1f9.chunk.js.map": "/hacktober-code-jam/static/js/2.e7d6d1f9.chunk.js.map",
+    "static/js/3.0b3b0e52.chunk.js": "/hacktober-code-jam/static/js/3.0b3b0e52.chunk.js",
+    "static/js/3.0b3b0e52.chunk.js.map": "/hacktober-code-jam/static/js/3.0b3b0e52.chunk.js.map",
     "index.html": "/hacktober-code-jam/index.html",
-    "static/css/main.12f2fca7.chunk.css.map": "/hacktober-code-jam/static/css/main.12f2fca7.chunk.css.map",
-    "static/js/2.44f2b4f8.chunk.js.LICENSE.txt": "/hacktober-code-jam/static/js/2.44f2b4f8.chunk.js.LICENSE.txt",
+    "static/css/main.f04717f2.chunk.css.map": "/hacktober-code-jam/static/css/main.f04717f2.chunk.css.map",
+    "static/js/2.e7d6d1f9.chunk.js.LICENSE.txt": "/hacktober-code-jam/static/js/2.e7d6d1f9.chunk.js.LICENSE.txt",
     "static/media/about.66acfbf6.jpeg": "/hacktober-code-jam/static/media/about.66acfbf6.jpeg",
     "static/media/arrow.fb19013e.svg": "/hacktober-code-jam/static/media/arrow.fb19013e.svg",
     "static/media/background.fbbfe280.jpeg": "/hacktober-code-jam/static/media/background.fbbfe280.jpeg",
@@ -26,6 +26,8 @@
     "static/media/hero.c1877048.jpeg": "/hacktober-code-jam/static/media/hero.c1877048.jpeg",
     "static/media/instagram.e53e58f0.svg": "/hacktober-code-jam/static/media/instagram.e53e58f0.svg",
     "static/media/liked.22e45af6.svg": "/hacktober-code-jam/static/media/liked.22e45af6.svg",
+    "static/media/location-active.86f98d1f.svg": "/hacktober-code-jam/static/media/location-active.86f98d1f.svg",
+    "static/media/location.7203b5be.svg": "/hacktober-code-jam/static/media/location.7203b5be.svg",
     "static/media/map.51558fff.png": "/hacktober-code-jam/static/media/map.51558fff.png",
     "static/media/mountain.83f88ff2.svg": "/hacktober-code-jam/static/media/mountain.83f88ff2.svg",
     "static/media/mountains.32d67057.jpeg": "/hacktober-code-jam/static/media/mountains.32d67057.jpeg",
@@ -40,9 +42,9 @@
     "static/media/wetlands.9078bcd6.jpeg": "/hacktober-code-jam/static/media/wetlands.9078bcd6.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.000b6c15.js",
-    "static/js/2.44f2b4f8.chunk.js",
-    "static/css/main.12f2fca7.chunk.css",
-    "static/js/main.619d82b8.chunk.js"
+    "static/js/runtime-main.e96d63c6.js",
+    "static/js/2.e7d6d1f9.chunk.js",
+    "static/css/main.f04717f2.chunk.css",
+    "static/js/main.c34c2b0f.chunk.js"
   ]
 }
