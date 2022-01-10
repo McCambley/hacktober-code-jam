@@ -46,6 +46,7 @@ export default function Destinations({
   handleSubmit,
   isSubmitting,
   updatePlayer,
+  handleCurrentLocation,
 }) {
   const history = useHistory();
   function handlePlaceClick(zip, env) {
@@ -72,6 +73,7 @@ export default function Destinations({
         handleSubmit={handleSubmit}
         isSubmitting={isSubmitting}
         page="landing"
+        handleCurrentLocation={handleCurrentLocation}
       />
       <Places>
         {placeList.map((listedLocation, index) => {

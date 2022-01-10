@@ -33,6 +33,22 @@ export default function App() {
     updatePlayer(z, e);
   }
 
+  function handleCurrentLocation() {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser");
+    } else {
+      setIsSubmitting(true);
+      navigator.geolocation.getCurrentPosition(
+        (location) => {
+          alert(location);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+  }
+
   function updatePlayer(z, e) {
     setIsSubmitting(true);
     setSources([]);
@@ -153,6 +169,7 @@ export default function App() {
             handleSubmit={handleSubmit}
             isSubmitting={isSubmitting}
             updatePlayer={updatePlayer}
+            handleCurrentLocation={handleCurrentLocation}
           />
           <Footer />
         </Route>

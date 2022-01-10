@@ -21,6 +21,7 @@ export default function Form({
   isSubmitting,
   displayLoc,
   page = "player",
+  handleCurrentLocation,
 }) {
   return (
     <FormSection
@@ -60,7 +61,9 @@ export default function Form({
         </InputContainer>
       )}
       <ButtonContainer>
-        {displayLoc && <CurrentLocation />}
+        {displayLoc && (
+          <CurrentLocation type="button" onClick={handleCurrentLocation} />
+        )}
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Loading..." : "Submit"}
         </Button>
