@@ -34,15 +34,30 @@ export default function App() {
   }
 
   function handleCurrentLocation() {
+    history.push("/player");
+    setIsSubmitting(true);
+    setSources([]);
+
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser");
     } else {
-      setIsSubmitting(true);
       navigator.geolocation.getCurrentPosition(
+        // Success
         (location) => {
-          alert(location);
+          const { latitude, longitude } = location.coords;
+          const placeIndex = Math.floor(Math.random() * (places.length - 1));
+          const query = places[placeIndex];
+          setLocationName(
+            `Lat: ${latitude.toString().substring(0, 5)} | Long: ${longitude
+              .toString()
+              .substring(0, 5)}`
+          );
+          console.log({ latitude, longitude, query });
+          return getBirds(latitude, longitude, query);
         },
+        // Failed
         (error) => {
+          setIsSubmitting(false);
           console.log(error);
         }
       );
@@ -61,6 +76,10 @@ export default function App() {
     const { latitude, longitude, city, state } = newLocation;
     setLocationName(`${city}, ${state}`);
     // look for common birds in that area
+    return getBirds(latitude, longitude, e);
+  }
+
+  function getBirds(latitude, longitude, environment) {
     api
       .getBirds(latitude, longitude)
       .then((data) => {
@@ -86,7 +105,7 @@ export default function App() {
       .then((promises) => {
         Promise.all(promises).then((values) => {
           setSources(values);
-          updateBackground(e);
+          updateBackground(environment);
           setIsSubmitting(false);
           history.push("/player");
         });
@@ -109,8 +128,8 @@ export default function App() {
   }
 
   function handleRandomize() {
-    const placeIindex = Math.floor(Math.random() * (places.length - 1));
-    const query = places[placeIindex];
+    const placeIndex = Math.floor(Math.random() * (places.length - 1));
+    const query = places[placeIndex];
     const zipcode = zipcodes.random().zip;
     setZipcode(zipcode);
     setEnvironment(query);
