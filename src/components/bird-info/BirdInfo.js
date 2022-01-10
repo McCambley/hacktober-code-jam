@@ -1,45 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-// const Bird = styled.div`
-//   width: 200px;
-//   height: 100px;
-//   border: 2px solid gray;
-//   border-radius: 4px;
-//   color: #333333;
-// `;
-
-// const BirdDisplay = styled.div`
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   gap: 24px;
-//   width: 100%;
-//   height: 100%;
-//   color: #333333;
-// `;
-
-const Information = styled.h2`
-  width: 100%;
-  max-width: 50vw;
-  color: #333;
-  text-align: center;
-  margin: 0 auto;
-  line-height: 36px;
-  @media (max-width: 768px) {
-    max-width: 85vw;
-  }
-`;
-
-const BirdLink = styled.a`
-  color: #2b8dc0;
-  cursor: pointer;
-  text-decoration: none;
-  transiton: opacity 0.15s ease;
-
-  &:hover {
-    opacity: 0.7;
-  }
-`;
+import { Information, BirdLink } from "./styledBirdInfo";
 
 export default function BirdInfo({ birdNames, sources }) {
   return (
