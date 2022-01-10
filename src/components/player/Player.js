@@ -42,6 +42,7 @@ export default function Player({
   handleRandomize,
   updateBackground,
   updatePlayer,
+  handleCurrentLocation,
 }) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isLiked, setIsLiked] = React.useState(false);
@@ -140,6 +141,7 @@ export default function Player({
           setEnvironment={setEnvironment}
           handleSubmit={handleSubmit}
           isSubmitting={isSubmitting}
+          handleCurrentLocation={handleCurrentLocation}
         />
       </Popup>
       <ReactPlayer

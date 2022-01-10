@@ -160,6 +160,7 @@ export default function App() {
             handleRandomize={handleRandomize}
             updateBackground={updateBackground}
             updatePlayer={updatePlayer}
+            handleCurrentLocation={handleCurrentLocation}
           />
         </Route>
         <Route exact path="/">
