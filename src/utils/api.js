@@ -30,23 +30,27 @@ class Api {
   getSong(birdName) {
     const randomNumber = Math.floor(Math.random() * 2);
     const birdQuery = birdName.split(" ").join("+");
-    return fetch(
-      `https://jsonp.afeld.me/?url=https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`
-    )
-      .then((res) => this._checkResponse(res))
-      .then((res) => {
-        if (res.recordings.length === 0) {
+    return (
+      fetch(`http://localhost:5000?bird=${birdQuery}`)
+        // fetch(`https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`)
+        // return fetch(
+        //   `https://jsonp.afeld.me/?url=https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`
+        // )
+        .then((res) => this._checkResponse(res))
+        .then((res) => {
+          if (res.recordings.length === 0) {
+            return {
+              file: "",
+              url: "",
+            };
+          }
           return {
-            file: "",
-            url: "",
+            file: res.recordings[randomNumber].file,
+            url: res.recordings[randomNumber].url,
           };
-        }
-        return {
-          file: res.recordings[randomNumber].file,
-          url: res.recordings[randomNumber].url,
-        };
-      })
-      .catch((err) => console.error(err));
+        })
+        .catch((err) => console.error(err))
+    );
   }
 
   getPlace(lat, long) {
