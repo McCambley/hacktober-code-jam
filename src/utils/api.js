@@ -28,7 +28,6 @@ class Api {
   }
 
   getSong(birdName) {
-    console.log(process.env);
     const randomNumber = Math.floor(Math.random() * 2);
     const birdQuery = birdName.split(" ").join("+");
     // DEVELOPMENT
