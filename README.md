@@ -4,6 +4,8 @@
 
 Our group designed and built **[Aviary](https://mccambley.github.io/hacktober-code-jam/)**, an application that allows users to pick a landscape and location to build a custom audiovisual experience containing images of the chosen landscape as well as the sounds of birds native to their chosen location.
 
+### Check out a live demo of this project [here](https://youtu.be/6hlaG0G9euE).
+
 ## 📣 Overview
 
 - Chose a location using the form on the **[landing page](https://mccambley.github.io/hacktober-code-jam/)**
@@ -21,7 +23,7 @@ Our group designed and built **[Aviary](https://mccambley.github.io/hacktober-co
 - **[Xeno-canto Api](https://xeno-canto.org/explore/api)**: Provides the songs of birds found by the **eBird Api**
 - **[Unsplash](https://unsplash.com/developers)**: Provides the images to match the landscape chosen by the user
 
-## ✨ Demo
+## ✨ Screenshots - [Live Demo](https://youtu.be/6hlaG0G9euE)
 
 ---
 
