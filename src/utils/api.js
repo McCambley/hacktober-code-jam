@@ -28,29 +28,29 @@ class Api {
   }
 
   getSong(birdName) {
+    console.log(process.env);
     const randomNumber = Math.floor(Math.random() * 2);
     const birdQuery = birdName.split(" ").join("+");
-    return (
-      fetch(`http://localhost:5000?bird=${birdQuery}`)
-        // fetch(`https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`)
-        // return fetch(
-        //   `https://jsonp.afeld.me/?url=https://www.xeno-canto.org/api/2/recordings?query=${birdQuery}`
-        // )
-        .then((res) => this._checkResponse(res))
-        .then((res) => {
-          if (res.recordings.length === 0) {
-            return {
-              file: "",
-              url: "",
-            };
-          }
+    // DEVELOPMENT
+    // const baseUrl = "http://localhost:5000";
+    // PRODUCTION
+    const baseUrl = "https://bird-proxy.herokuapp.com";
+
+    return fetch(`${baseUrl}/sounds?bird=${birdQuery}`)
+      .then((res) => this._checkResponse(res))
+      .then((res) => {
+        if (res.recordings.length === 0) {
           return {
-            file: res.recordings[randomNumber].file,
-            url: res.recordings[randomNumber].url,
+            file: "",
+            url: "",
           };
-        })
-        .catch((err) => console.error(err))
-    );
+        }
+        return {
+          file: res.recordings[randomNumber].file,
+          url: res.recordings[randomNumber].url,
+        };
+      })
+      .catch((err) => console.error(err));
   }
 
   getPlace(lat, long) {
