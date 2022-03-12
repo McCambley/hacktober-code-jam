@@ -1,11 +1,6 @@
 import { createApi } from "unsplash-js";
-
-/**
- * @class
- */
 class Api {
   constructor() {
-    // constructor body
     this._unsplashApi = createApi({
       accessKey: "xjXfjbZXUyocjWtFmr8VkvF2ir1ee4omC5IYJCc1598",
     });
