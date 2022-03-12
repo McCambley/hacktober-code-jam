@@ -1,5 +1,8 @@
 import { createApi } from "unsplash-js";
 
+/**
+ * @class
+ */
 class Api {
   constructor() {
     // constructor body

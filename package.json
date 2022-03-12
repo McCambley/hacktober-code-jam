@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^12.8.3",
     "dotenv": "^10.0.0",
     "ebird": "^2.0.2",
-    "jsdoc": "^3.6.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
@@ -29,7 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "jsdoc": "^3.6.10"
   }
 }
