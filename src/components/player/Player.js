@@ -71,6 +71,8 @@ export default function Player({
     setIsPlaying(!isPlaying);
   }
 
+  console.log({ background });
+
   return (
     <>
       <PlayerContent background={background}>

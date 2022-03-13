@@ -20,7 +20,11 @@ export default function App() {
   const [environment, setEnvironment] = useStateWithCallbackLazy("mountains");
 
   // fetch results
-  const [backgroundImage, setBackgroundImage] = React.useState(newOrleans);
+  const [backgroundImage, setBackgroundImage] = React.useState({
+    full: newOrleans,
+    regular: newOrleans,
+    small: newOrleans,
+  });
   const [locationName, setLocationName] = React.useState("Jackson, NH");
   const [sources, setSources] = React.useState([]);
   const [birdNames, setBirdNames] = React.useState([]);
@@ -132,7 +136,9 @@ export default function App() {
     api
       .getImage(e)
       .then((res) => {
-        return setBackgroundImage(res.urls.regular);
+        console.log(res.urls);
+        const { full, regular, small } = res.urls;
+        return setBackgroundImage({ full, regular, small });
       })
       .catch((error) => {
         console.error(error);

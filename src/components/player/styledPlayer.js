@@ -19,7 +19,7 @@ export const increaseProgress = keyframes`
 `;
 
 export const PlayerContent = styled.section`
-  background-image: url(${(props) => props.background});
+  background-image: url(${(props) => props.background.full});
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -29,9 +29,15 @@ export const PlayerContent = styled.section`
   align-items: center;
   padding: 60px;
   box-sizing: border-box;
+  @media (max-width: 1024px) {
+    background-image: url(${(props) => props.background.regular});
+  }
   @media (max-width: 768px) {
     padding: 24px;
-  } ;
+  }
+  @media (max-width: 480px) {
+    background-image: url(${(props) => props.background.small});
+  }
 `;
 
 export const Foreground = styled.div`
