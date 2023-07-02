@@ -8,18 +8,18 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "dotenv": "^10.0.0",
-    "ebird": "^2.0.2",
+    "ebird": "^0.5.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-player": "^2.9.0",
     "react-router-dom": "^5.3.0",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.1",
     "unsplash-js": "^7.0.15",
     "use-state-with-callback": "^2.0.3",
     "web-vitals": "^1.1.2",
-    "xeno-canto": "0.0.4",
+    "xeno-canto": "^0.0.3",
     "zipcodes": "^8.0.0"
   },
   "scripts": {
@@ -50,6 +50,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.0.0"
   }
 }

@@ -31,7 +31,7 @@ class Api {
     // DEVELOPMENT
     // const baseUrl = "http://localhost:5000";
     // PRODUCTION
-    const baseUrl = "https://bird-proxy.herokuapp.com";
+    const baseUrl = "https://bird-proxy.onrender.com";
 
     return fetch(`${baseUrl}/sounds?bird=${birdQuery}`)
       .then((res) => this._checkResponse(res))
