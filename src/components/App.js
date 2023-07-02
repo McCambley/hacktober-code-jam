@@ -69,15 +69,28 @@ export default function App() {
     return api
       .getPlace(latitude, longitude)
       .then((response) => {
+        console.log({ response });
+        const place = parsePlaceName(response);
         setZipcode(response.address.postcode);
-        setLocationName(
-          `${response.address.village}, ${response.address.state}`
-        );
+        setLocationName(place);
       })
       .catch((error) => {
         setLocationName(`Lat: ${latitude} | Long: ${longitude}`);
         console.error(error);
       });
+  }
+
+  function parsePlaceName(place) {
+    if (!place || !place.address) return "Earth";
+
+    const town = place.address.village
+      ? `${place.address.village}, `
+      : place.address.town
+      ? `${place.address.town}, `
+      : "";
+    const state = place.address.state;
+
+    return `${town}${state}`;
   }
 
   function updatePlayer(z, e) {
