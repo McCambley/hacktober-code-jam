@@ -2,13 +2,13 @@
 
 **Aviary** is a project completed for **Practicum by Yandex's October Code Jam**. During the Code Jam, two web developers and one web designer came together over the course of three days to create an application that would help users stay grounded during the pandemic.
 
-Our group designed and built **[Aviary](https://mccambley.github.io/hacktober-code-jam/)**, an application that allows users to pick a landscape and location to build a custom audiovisual experience containing images of the chosen landscape as well as the sounds of birds native to their chosen location.
+Our group designed and built **Aviary**, an application that allows users to pick a landscape and location to build a custom audiovisual experience containing images of the chosen landscape as well as the sounds of birds native to their chosen location.
 
 ### Check out a live demo of this project [here](https://youtu.be/6hlaG0G9euE).
 
 ## 📣 Overview
 
-- Chose a location using the form on the **[landing page](https://mccambley.github.io/hacktober-code-jam/)**
+- Chose a location using the form on the **landing page**
 - Or click the **player** link in the header to be taken to sample soundscape depicting the bird sounds of **Jackson, NH** with a **Mountain** backdrop
 - From the **player**
   - Click the **Mountain** button to pick a new location or landscape preference
