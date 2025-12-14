@@ -1,4 +1,4 @@
-# [View this project live 🎉](https://mccambley.github.io/hacktober-code-jam/)
+# Aviary
 
 **Aviary** is a project completed for **Practicum by Yandex's October Code Jam**. During the Code Jam, two web developers and one web designer came together over the course of three days to create an application that would help users stay grounded during the pandemic.
 
